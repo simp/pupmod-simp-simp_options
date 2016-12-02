@@ -1,0 +1,10 @@
+# Defaults appropriate for SIMP LDAP schemas.
+# Assumes ldap::base_dn and puppet::server hieradata are set.
+---
+simp_options::ldap::bind_dn : "cn=hostAuth,ou=Hosts,%{hiera('simp_options::ldap::base_dn')}"
+simp_options::ldap::root_dn : "cn=LDAPAdmin,ou=People,%{hiera('simp_options::ldap::base_dn')}"
+simp_options::ldap::sync_dn : "cn=LDAPSync,ou=Hosts,%{hiera('simp_options::ldap::base_dn')}"
+simp_options::ldap::master : "ldap://%{hiera('simp_options::puppet::server')}"
+simp_options::ldap::uri :
+  - "ldap://%{hiera('simp_options::puppet::server')}"
+
