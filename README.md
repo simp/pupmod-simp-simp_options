@@ -40,14 +40,19 @@ enable and/or configure capabilities.
 
 ### Beginning with simp_options
 
-simp_options is configured for you when you run ```simp config``` on your SIMP
+`simp_options` is configured for you when you run ```simp config``` on your SIMP
 system.  Otherwise, setup is simple:  include the class as the first class in your
-```site.pp``` and select the desired capabilities through hieradata.
+```site.pp``` and select the desired capabilities through Hiera or your ENC.
 
-NOTE:  The 
-```environments/simp/hieradata/simp_defs.yaml``` file delivered with the
-simp puppet module is an example file that can be used to create the
-appropriate hieradata for your site.
+--------------------
+
+ **NOTE**
+
+ The ```environments/simp/hieradata/simp_defs.yaml``` file delivered with the
+ simp puppet module is an example file that can be used to create the
+ appropriate hieradata for your site.
+
+--------------------
 
 ## Usage
 
@@ -62,6 +67,7 @@ TODO - Anything to put here?  Module is trivial, so further explanation
 doesn't seem warranted.
 
 ## Limitations
+
 This module is applicable to SIMP systems or systems containing SIMP components.
 
 ## Development

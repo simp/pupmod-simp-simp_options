@@ -3,3 +3,4 @@ manifests/**/*.pp
 types/**/*.pp
 --markup markdown
 -f html
+--readme README.md

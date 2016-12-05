@@ -1,48 +1,71 @@
 #
-# simp_options class.
+# simp_options class
 #
 # Sets up variables that enable core SIMP capabilities or provide site
 # configuration larger than the scope of a single module.
 #
-# @param auditd Whether to include SIMP's ::auditd class and add audit
-#          rules pertinent to each application
-# @param clamav Whether SIMP should manage ClamAV
-# @param fips Whether to enable FIPS mode for the system. This parameter
-#          enforces strict compliance with FIPS-140-2.  All core SIMP modules
-#          can support this configuration.  However, it is important that
-#          you know the security tradeoffs of FIPS-140-2 compliance.
-#          FIPS mode disables the use of MD5 and may require weaker ciphers
-#          or key lengths than your security policies allow.
-# @param firewall Whether to include SIMP's firewall class (simp::iptables)
-#          and add rules pertinent to each application.
-# @param haveged Whether to include the haveged class to ensure adequate
-#          entropy for key generation
-# @param ipsec Whether to include SIMP's ipsec class (simp::libreswan)
-#          and add rules pertinent to each application.
-# @param ipv6 - Whether to enable ipv6 functionality across the board.
-# @param kerberos - Whether to include the SIMP's Kerberos class
-#          (::krb5) and to use Kerberos in applicable modules
-# @param ldap Whether modules should use LDAP.
-# @param pam Whether to include SIMP’s ::pam class SIMP to manage the PAM stack
-# @param pki Whether to include the simp::pki class and use pki::copy to
-#           distribute PKI certificates to the correct locations
-# @param selinux Whether to include the simp::selinux class (which effectively
-#           manages the SELinux enforcement and mode) and manage SIMP-specific
-#           SELinux configurations
-# @param sssd Whether to use SSSD
-# @param stunnel Whether to include SIMP’s ::stunnel class and use it to
-#           secure server-to-server communications in applicable modules
-# @param syslog Whether to include the  simp::rsyslog  class and configure
-#           rsyslog application hooks
-# @param tcpwrappers Whether to include the simp::tcpwrappers and use
-#           tcpwrappers::allow to permit the application to the subnets in
-#           $::simp_options::trusted_nets
-# @param trusted_nets Subnets to permit, generally in CIDR notation. If you
-#           need this to be more (or less) restrictive for a given class,
-#           you can override it
-# elsewhere in Hiera.
+# @param auditd Whether to include SIMP's ``::auditd`` class and add audit rules
+#   pertinent to each application
 #
-# @author SIMP Team
+# @param clamav Whether SIMP should manage ``ClamAV``
+#
+# @param fips Whether to enable ``FIPS`` mode for the system.
+#
+#  This parameter enforces strict compliance with ``FIPS-140-2``.
+#
+#  All core SIMP modules can support this configuration. It is important that
+#  you know the security tradeoffs of ``FIPS-140-2`` compliance.
+#
+#  ``FIPS`` mode disables the use of ``MD5`` and may require weaker ciphers or
+#  key lengths than your security policies allow.
+#
+# @see http://simp.readthedocs.io/en/master/security_mapping/components/simplib/cryptographic_protection/control.html SIMP - Security Control Mapping Cryptographic Protection
+#
+# @param firewall Whether to include SIMP's firewall class ``::simp::iptables``
+#   and add rules pertinent to each application.
+#
+# @param haveged Whether to include the ``::haveged`` class to ensure adequate
+#   entropy for key generation
+#
+# @see http://simp.readthedocs.io/en/master/getting_started_guide/ISO_Build/Environment_Preparation.html?highlight=haveged SIMP - Getting Started Environment Preparation
+#
+# @param ipsec Whether to include SIMP's ``ipsec`` class, ``simp::libreswan``, and
+#   add rules pertinent to each application.
+#
+# @param ipv6 Whether to enable ``IPv6`` functionality across the board.
+#
+# @param kerberos Whether to include the SIMP's Kerberos class, ``::krb5``, and
+#   to use ``Kerberos`` in applicable modules
+#
+# @param ldap Whether modules should use ``LDAP``.
+#
+# @param pam Whether to include SIMP’s ``::pam`` class SIMP to manage ``PAM``
+#
+# @param pki Whether to include the ``::simp::pki`` class and use ``::pki::copy``
+#   to distribute PKI certificates to the correct locations
+#
+# @param selinux Whether to include the ``::simp::selinux`` class (which
+#   effectively manages the ``SELinux`` enforcement and mode) and manage
+#   SIMP-specific ``SELinux`` configurations
+#
+# @param sssd Whether to use ``SSSD``
+#
+# @param stunnel Whether to include SIMP’s ``::stunnel`` class and use it to
+#   secure server-to-server communications in applicable modules
+#
+# @param syslog Whether to include the ``::simp::rsyslog`` class and configure
+#   RSyslog application hooks
+#
+# @param tcpwrappers Whether to include the ``::simp::tcpwrappers`` class and
+#   use ``tcpwrappers::allow`` to permit the application to the subnets in
+#   ``$::simp_options::trusted_nets``
+#
+# @param trusted_nets Subnets to permit, in ``CIDR`` notation.
+#
+#   If you need this to be more (or less) restrictive for a given class, you
+#   can override it for the specific class via that class' parameters.
+#
+# @author SIMP Team - https://simp-project.com
 #
 class simp_options (
   Boolean $auditd                           = false,
