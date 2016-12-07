@@ -11,7 +11,7 @@ describe 'simp_options::openssl' do
           it { is_expected.to compile.with_all_deps }
           it { 
             is_expected.to contain_class('simp_options::openssl').with(
-              :cipher_suite => ['FIPS', "!LOW", "!COMPLIMENTOFDEFAULT"]
+              :cipher_suite => ['FIPS', "!LOW"]
             )
           }
         end
