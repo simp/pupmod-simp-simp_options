@@ -23,8 +23,8 @@
 # @author SIMP Team - https://simp-project.com
 #
 class simp_options::dns (
- Array[String] $search = [],
- Array[String] $servers = []
+  Array[String] $search = [],
+  Array[String] $servers = []
 ){
- validate_net_list($servers)
+  validate_net_list($servers)
 }

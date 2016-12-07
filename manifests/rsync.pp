@@ -15,8 +15,8 @@
 # @author SIMP Team - https://simp-project.com
 #
 class simp_options::rsync (
-  String $server   = '127.0.0.1',
-  Integer $timeout = 1
+  String $server  = '127.0.0.1',
+  String $timeout = '1'
 ){
   validate_net_list($server)
 }
