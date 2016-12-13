@@ -1,0 +1,3 @@
+---
+simp_options::puppet::server : 'puppet.example.com'
+simp_options::puppet::ca : '600.1.2.3'

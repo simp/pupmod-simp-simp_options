@@ -1,6 +1,0 @@
----
-simp_options::openssl::cipher_suite :
-# FIPS is an unadvertised cipher suite.  Run 'openssl ciphers FIPS' to inspect.
- - "FIPS"
- - "!LOW"
-

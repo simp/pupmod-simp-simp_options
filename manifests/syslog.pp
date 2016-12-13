@@ -13,6 +13,7 @@ class simp_options::syslog (
   Array[String] $log_servers          = [],
   Array[String] $failover_log_servers = []
 ){
+  assert_private()
   validate_net_list($log_servers)
   validate_net_list($failover_log_servers)
 }

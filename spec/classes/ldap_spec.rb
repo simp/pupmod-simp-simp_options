@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-describe 'simp_options::ldap' do
+describe 'simp_options' do
   context 'supported operating systems' do
     on_supported_os.each do |os, facts|
 
       context "on #{os}" do
         let(:facts){ facts }
 
-        context 'default parameters' do
+        context 'default parameters for simp_options::ldap' do
           let(:hieradata) { 'simp_options_with_ldap' }
           it { is_expected.to compile.with_all_deps }
           # make sure interpolation of hieradata in modules's data/ is working
@@ -28,15 +28,13 @@ describe 'simp_options::ldap' do
           }
         end
 
-        context 'invalid master' do
-          let(:hieradata) { 'simp_options_with_ldap' }
-          let(:params){{ :master => '1.2.3.400' }}
+        context 'invalid simp_options::ldap::master' do
+          let(:hieradata) { 'simp_options_with_invalid_ldap_master' }
           it { is_expected.not_to compile.with_all_deps }
         end
 
-        context 'invalid uri' do
-          let(:hieradata) { 'simp_options_with_ldap' }
-          let(:params){{ :uri => ['1.2.3.500'] }}
+        context 'invalid simp_options::ldap::uri' do
+          let(:hieradata) { 'simp_options_with_invalid_ldap_uri' }
           it { is_expected.not_to compile.with_all_deps }
         end
       end

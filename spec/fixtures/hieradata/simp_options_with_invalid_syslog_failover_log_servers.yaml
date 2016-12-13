@@ -1,0 +1,7 @@
+---
+simp_options::puppet::server : 'puppet.example.com'
+simp_options::puppet::ca : 'puppet.example.com'
+simp_options::syslog : true
+simp_options::syslog::failover_log_servers :
+ - '1.2.300.4'
+ - '2.3.4.5'

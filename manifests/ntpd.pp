@@ -13,5 +13,6 @@
 class simp_options::ntpd (
   Array[String] $servers = []
 ){
+  assert_private()
   validate_net_list($servers)
 }

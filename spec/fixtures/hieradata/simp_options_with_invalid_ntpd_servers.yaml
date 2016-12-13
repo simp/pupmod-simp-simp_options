@@ -1,0 +1,5 @@
+---
+simp_options::puppet::server : 'puppet.example.com'
+simp_options::puppet::ca : 'puppet.example.com'
+simp_options::ntpd::servers :
+ - '1.2.3.400'

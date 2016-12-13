@@ -53,6 +53,7 @@ class simp_options::ldap (
   String $master,
   Array[String] $uri
 ){
+  assert_private()
   validate_uri_list($master,['ldap','ldaps'])
   validate_uri_list($uri,['ldap','ldaps'])
 }

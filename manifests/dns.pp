@@ -26,5 +26,6 @@ class simp_options::dns (
   Array[String] $search = [],
   Array[String] $servers = []
 ){
+  assert_private()
   validate_net_list($servers)
 }

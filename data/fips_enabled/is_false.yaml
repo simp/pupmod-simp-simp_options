@@ -1,4 +1,0 @@
----
-simp_options::openssl::cipher_suite :
-  - "DEFAULT"
-  - "!MEDIUM"

@@ -16,6 +16,7 @@ class simp_options::puppet (
   String $ca,
   Stdlib::Compat::Integer $ca_port = '8141'
 ){
+  assert_private()
   validate_net_list($server)
   validate_net_list($ca)
 }

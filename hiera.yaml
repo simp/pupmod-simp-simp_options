@@ -2,8 +2,5 @@
 version: 4
 datadir: data
 hierarchy:
-  - name: "fips_enabled"
-    backend: yaml
-    path: "fips_enabled/is_%{facts.fips_enabled}"
   - name: "ldap"
     backend: yaml

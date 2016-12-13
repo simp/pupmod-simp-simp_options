@@ -18,5 +18,6 @@ class simp_options::rsync (
   String $server  = '127.0.0.1',
   Stdlib::Compat::Integer $timeout = '1'
 ){
+  assert_private()
   validate_net_list($server)
 }
