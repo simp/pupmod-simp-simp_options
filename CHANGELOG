@@ -1,2 +1,5 @@
+* Fri Dec 30 2016 Dylan Cochran <dylan.cochran@onyxpoint.com> - 1.0.1-0
+- Add simp_options::puppet::server_distribution
+
 * Fri Dec 02 2016 Liz Nemsick <lnemsick.simp@gmail.com> - 1.0.0-0
 - Initial version
