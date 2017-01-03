@@ -28,6 +28,20 @@ describe 'simp_options' do
           it { is_expected.to contain_class('simp_options::ldap') }
         end
 
+        context 'with pki=true' do
+          let(:hieradata) { "#{class_name}_with_pki_true" }
+          let(:params){{ :pki => true }}
+          it_should_behave_like "a simp_options class"
+          it { is_expected.to contain_class('simp_options::pki') }
+        end
+
+        context 'with pki=simp' do
+          let(:hieradata) { "#{class_name}_with_pki_simp" }
+          let(:params){{ :pki => true }}
+          it_should_behave_like "a simp_options class"
+          it { is_expected.to contain_class('simp_options::pki') }
+        end
+
         context 'with syslog enabled' do
           let(:hieradata) { class_name }
           let(:params){{ :syslog => true }}

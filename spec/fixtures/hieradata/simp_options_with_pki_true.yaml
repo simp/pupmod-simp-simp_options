@@ -1,0 +1,4 @@
+---
+simp_options::puppet::server : 'puppet.example.com'
+simp_options::puppet::ca : 'puppet.example.com'
+simp_options::pki : true
