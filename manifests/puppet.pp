@@ -12,9 +12,9 @@
 # @author SIMP Team - https://simp-project.com
 #
 class simp_options::puppet (
-  String $server,
-  String $ca,
-  Stdlib::Compat::Integer $ca_port = '8141'
+  Simplib::Host $server,
+  Simplib::Host $ca,
+  Simplib::Port $ca_port = 8141
 ){
   assert_private()
   validate_net_list($server)

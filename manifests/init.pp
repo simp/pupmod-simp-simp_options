@@ -71,24 +71,24 @@
 # @author SIMP Team - https://simp-project.com
 #
 class simp_options (
-  Boolean $auditd                           = false,
-  Boolean $clamav                           = false,
-  Boolean $fips                             = false,
-  Boolean $firewall                         = false,
-  Boolean $haveged                          = false,
-  Boolean $ipsec                            = false,
-  Boolean $ipv6                             = false,
-  Boolean $kerberos                         = false,
-  Boolean $ldap                             = false,
-  Boolean $logrotate                        = false,
-  Boolean $pam                              = false,
-  Boolean $pki                              = false,
-  Boolean $selinux                          = false,
-  Boolean $sssd                             = false,
-  Boolean $stunnel                          = false,
-  Boolean $syslog                           = false,
-  Boolean $tcpwrappers                      = false,
-  Array[String] $trusted_nets               = ['127.0.0.1', '::1']
+  Boolean $auditd             = false,
+  Boolean $clamav             = false,
+  Boolean $fips               = false,
+  Boolean $firewall           = false,
+  Boolean $haveged            = false,
+  Boolean $ipsec              = false,
+  Boolean $ipv6               = false,
+  Boolean $kerberos           = false,
+  Boolean $ldap               = false,
+  Boolean $logrotate          = false,
+  Boolean $pam                = false,
+  Boolean $pki                = false,
+  Boolean $selinux            = false,
+  Boolean $sssd               = false,
+  Boolean $stunnel            = false,
+  Boolean $syslog             = false,
+  Boolean $tcpwrappers        = false,
+  Array[String] $trusted_nets = ['127.0.0.1', '::1']
 ){
   validate_net_list($trusted_nets)
 

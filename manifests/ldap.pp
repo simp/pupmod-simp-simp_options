@@ -41,17 +41,17 @@
 # @author SIMP Team - https://simp-project.com
 #
 class simp_options::ldap (
-  String $base_dn,
-  String $bind_dn,
-  String $bind_pw,
-  String $bind_hash,
-  String $sync_dn,
-  String $sync_pw,
-  String $sync_hash,
-  String $root_dn,
-  String $root_hash,
-  String $master,
-  Array[String] $uri
+  String              $base_dn,
+  String              $bind_dn,
+  String              $bind_pw,
+  String              $bind_hash,
+  String              $sync_dn,
+  String              $sync_pw,
+  String              $sync_hash,
+  String              $root_dn,
+  String              $root_hash,
+  Simplib::URI        $master,
+  Array[Simplib::URI] $uri
 ){
   assert_private()
   validate_uri_list($master,['ldap','ldaps'])

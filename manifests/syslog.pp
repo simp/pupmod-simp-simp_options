@@ -10,8 +10,8 @@
 # @author SIMP Team - https://simp-project.com
 #
 class simp_options::syslog (
-  Array[String] $log_servers          = [],
-  Array[String] $failover_log_servers = []
+  Array[Simplib::Host] $log_servers          = [],
+  Array[Simplib::Host] $failover_log_servers = []
 ){
   assert_private()
   validate_net_list($log_servers)

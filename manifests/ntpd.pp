@@ -11,7 +11,7 @@
 # @author SIMP Team - https://simp-project.com
 #
 class simp_options::ntpd (
-  Array[String] $servers = []
+  Array[Simplib::Host] $servers = []
 ){
   assert_private()
   validate_net_list($servers)
