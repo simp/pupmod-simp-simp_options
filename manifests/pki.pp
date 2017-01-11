@@ -9,7 +9,7 @@
 # @author SIMP Team - https://simp-project.com
 #
 class simp_options::pki (
-  Stdlib::Absolutepath $source = '/etc/pki/simp'
+  Stdlib::Absolutepath $source = '/etc/pki/simp/x509'
 ){
   assert_private()
 }
