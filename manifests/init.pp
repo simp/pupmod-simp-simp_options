@@ -32,8 +32,6 @@
 # @param ipsec Whether to include SIMP's ``ipsec`` class, ``::libreswan``, and
 #   add rules pertinent to each application.
 #
-# @param ipv6 Whether to enable ``IPv6`` functionality across the board.
-#
 # @param kerberos Whether to include the SIMP's Kerberos class, ``::krb5``, and
 #   to use ``Kerberos`` in applicable modules
 #
@@ -80,7 +78,6 @@ class simp_options (
   Boolean                       $firewall     = false,
   Boolean                       $haveged      = false,
   Boolean                       $ipsec        = false,
-  Boolean                       $ipv6         = false,
   Boolean                       $kerberos     = false,
   Boolean                       $ldap         = false,
   Boolean                       $logrotate    = false,
