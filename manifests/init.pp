@@ -78,6 +78,7 @@ class simp_options (
   Boolean                       $firewall     = false,
   Boolean                       $haveged      = false,
   Boolean                       $ipsec        = false,
+  Boolean                       $ipv6         = false,
   Boolean                       $kerberos     = false,
   Boolean                       $ldap         = false,
   Boolean                       $logrotate    = false,
