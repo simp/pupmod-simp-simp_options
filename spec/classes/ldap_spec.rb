@@ -5,13 +5,13 @@ describe 'simp_options' do
     on_supported_os.each do |os, facts|
 
       context "on #{os}" do
-        let(:facts){ facts }
+        let(:facts){ facts.merge({:domain => 'example.com'}) }
 
         context 'default parameters for simp_options::ldap' do
           let(:hieradata) { 'simp_options_with_ldap' }
           it { is_expected.to compile.with_all_deps }
           # make sure interpolation of hieradata in modules's data/ is working
-          it { 
+          it {
             is_expected.to contain_class('simp_options::ldap').with(
               :base_dn   => 'dc=example,dc=com',
               :bind_dn   => 'cn=hostAuth,ou=Hosts,dc=example,dc=com',
