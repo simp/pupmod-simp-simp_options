@@ -1,3 +1,10 @@
+* Mon Jan 30 2017 Nick Miller <nick.miller@onyxpoint.com> - 1.0.1-0
+- Added more strict Puppet and PE requirements, pinning to Puppet 4.7+ and
+  PE 2016.4.0+
+- Updated openssl::cipher_suite to be set to the fips_ciphers fact if it's
+  available to expand the 'fips' shortcut, which causes issues with some
+  applications (openldap)
+
 * Fri Dec 30 2016 Dylan Cochran <dylan.cochran@onyxpoint.com> - 1.0.1-0
 - Add simp_options::puppet::server_distribution
 
