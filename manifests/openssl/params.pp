@@ -13,9 +13,10 @@ class simp_options::openssl::params (
       $cipher_suite = $facts['fips_ciphers']
     }
     else {
-      $cipher_suite = ['FIPS', '!LOW']
+      fail('$facts[\'fips_ciphers\'] not found')
     }
-  } else {
+  }
+  else {
     $cipher_suite = ['DEFAULT', '!MEDIUM']
   }
 }
