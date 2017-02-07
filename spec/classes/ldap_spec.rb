@@ -21,7 +21,6 @@ describe 'simp_options' do
               :sync_pw   => 'N0t=@=R#@l=Sync=P@ssw0rd',
               :sync_hash => '{SSHA}DeadBeerDeadBeefDeadBeefDeadBeef',
               :root_dn   => 'cn=LDAPAdmin,ou=People,dc=example,dc=com',
-              :root_hash => '{SSHA}deadbeefDEADBEEFdeadbeefDEADBEEF',
               :master    => 'ldap://puppet.example.com',
               :uri       => ['ldap://puppet.example.com']
             )

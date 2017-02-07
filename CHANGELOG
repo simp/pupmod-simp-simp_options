@@ -1,3 +1,6 @@
+* Tue Feb 07 2017 Liz Nemsick <lnemsick.simp@gmail.com> - 1.0.1-0
+- Removed simp_options::ldap::root_hash as this is not a global catalyst
+
 * Wed Feb 01 2017 Nick Markowski <nmarkowski@keywcorp.com> - 1.0.1-0
 - Updated ldap *_dn defaults to use simplib::domain_to_dn()
 

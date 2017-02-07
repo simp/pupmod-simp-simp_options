@@ -22,8 +22,6 @@
 #
 # @param root_dn The LDAP Root Distinguished Name
 #
-# @param root_hash The LDAP Root password hash
-#
 # @param master The LDAP master in URI form (ldap://server)
 #
 # @param uri The list of OpenLDAP servers in URI form (ldap://server)
@@ -35,7 +33,6 @@ class simp_options::ldap (
   String              $bind_hash,
   String              $sync_pw,
   String              $sync_hash,
-  String              $root_hash,
   String              $base_dn    = simplib::ldap::domain_to_dn(),
   String              $bind_dn    = "cn=hostAuth,ou=Hosts,${simp_options::ldap::base_dn}",
   String              $sync_dn    = "cn=LDAPSync,ou=Hosts,${simp_options::ldap::base_dn}",

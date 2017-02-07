@@ -6,5 +6,4 @@ simp_options::ldap::bind_pw : 'N0t=@=R#@l=B1nd=P@ssw0rd'
 simp_options::ldap::bind_hash : '{SSHA}DEADBEEFdeadbeefDEADBEEFdeadbeef'
 simp_options::ldap::sync_pw : 'N0t=@=R#@l=Sync=P@ssw0rd'
 simp_options::ldap::sync_hash : '{SSHA}DeadBeerDeadBeefDeadBeefDeadBeef'
-simp_options::ldap::root_hash : '{SSHA}deadbeefDEADBEEFdeadbeefDEADBEEF'
 
