@@ -13,14 +13,14 @@ describe 'simp_options' do
           # make sure interpolation of hieradata in modules's data/ is working
           it {
             is_expected.to contain_class('simp_options::ldap').with(
-              :base_dn   => 'dc=example,dc=com',
-              :bind_dn   => 'cn=hostAuth,ou=Hosts,dc=example,dc=com',
+              :base_dn   => 'DC=example,DC=com',
+              :bind_dn   => 'cn=hostAuth,ou=Hosts,DC=example,DC=com',
               :bind_pw   => 'N0t=@=R#@l=B1nd=P@ssw0rd',
               :bind_hash => '{SSHA}DEADBEEFdeadbeefDEADBEEFdeadbeef',
-              :sync_dn   => 'cn=LDAPSync,ou=Hosts,dc=example,dc=com',
+              :sync_dn   => 'cn=LDAPSync,ou=Hosts,DC=example,DC=com',
               :sync_pw   => 'N0t=@=R#@l=Sync=P@ssw0rd',
               :sync_hash => '{SSHA}DeadBeerDeadBeefDeadBeefDeadBeef',
-              :root_dn   => 'cn=LDAPAdmin,ou=People,dc=example,dc=com',
+              :root_dn   => 'cn=LDAPAdmin,ou=People,DC=example,DC=com',
               :master    => 'ldap://puppet.example.com',
               :uri       => ['ldap://puppet.example.com']
             )

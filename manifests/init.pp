@@ -68,27 +68,32 @@
 #
 #   If you need this to be more (or less) restrictive for a given class, you
 #   can override it for the specific class via that class' parameters.
+# @param package_ensure The default ensure parmeter for packages.
+#
+#   Can be either 'latest' or 'installed'; currently defaults to 'latest' for
+#   historical reasons. Default may change in a newer version.
 #
 # @author SIMP Team - https://simp-project.com
 #
 class simp_options (
-  Boolean                       $auditd       = false,
-  Boolean                       $clamav       = false,
-  Boolean                       $fips         = false,
-  Boolean                       $firewall     = false,
-  Boolean                       $haveged      = false,
-  Boolean                       $ipsec        = false,
-  Boolean                       $kerberos     = false,
-  Boolean                       $ldap         = false,
-  Boolean                       $logrotate    = false,
-  Boolean                       $pam          = false,
-  Variant[Boolean,Enum['simp']] $pki          = false,
-  Boolean                       $selinux      = false,
-  Boolean                       $sssd         = false,
-  Boolean                       $stunnel      = false,
-  Boolean                       $syslog       = false,
-  Boolean                       $tcpwrappers  = false,
-  Simplib::Netlist              $trusted_nets = ['127.0.0.1', '::1']
+  Boolean                       $auditd         = false,
+  Boolean                       $clamav         = false,
+  Boolean                       $fips           = false,
+  Boolean                       $firewall       = false,
+  Boolean                       $haveged        = false,
+  Boolean                       $ipsec          = false,
+  Boolean                       $kerberos       = false,
+  Boolean                       $ldap           = false,
+  Boolean                       $logrotate      = false,
+  Boolean                       $pam            = false,
+  Variant[Boolean,Enum['simp']] $pki            = false,
+  Boolean                       $selinux        = false,
+  Boolean                       $sssd           = false,
+  Boolean                       $stunnel        = false,
+  Boolean                       $syslog         = false,
+  Boolean                       $tcpwrappers    = false,
+  Simplib::Netlist              $trusted_nets   = ['127.0.0.1', '::1'],
+  String                        $package_ensure = 'latest'
 ){
   validate_net_list($trusted_nets)
 

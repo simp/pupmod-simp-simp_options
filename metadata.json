@@ -1,6 +1,6 @@
 {
   "name": "simp-simp_options",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "SIMP Team",
   "summary": "Variables enabling SIMP core capabilities",
   "license": "Apache-2.0",
@@ -40,10 +40,6 @@
     {
       "name": "puppet",
       "version_requirement": ">= 4.7.0"
-    },
-    {
-      "name": "pe",
-      "version_requirement": ">= 2016.4.0"
     }
   ],
   "data_provider": "hiera"
