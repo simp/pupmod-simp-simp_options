@@ -73,6 +73,10 @@
 #   Can be either 'latest' or 'installed'; currently defaults to 'latest' for
 #   historical reasons. Default may change in a newer version.
 #
+# @param libkv Feature flag for libkv.
+#
+#   If set to true, it will enable the libkv backend for some functions.
+#
 # @author SIMP Team - https://simp-project.com
 #
 class simp_options (
@@ -93,7 +97,8 @@ class simp_options (
   Boolean                       $syslog         = false,
   Boolean                       $tcpwrappers    = false,
   Simplib::Netlist              $trusted_nets   = ['127.0.0.1', '::1'],
-  String                        $package_ensure = 'latest'
+  String                        $package_ensure = 'latest',
+  Boolean                       $libkv          = false,
 ){
   validate_net_list($trusted_nets)
 
