@@ -40,9 +40,9 @@
 # @param logrotate Whether to include SIMP's `::logrotate`` class
 #   and add rules pertinent to each application.
 #
-# @param pam Whether to include SIMP’s ``::pam`` class SIMP to manage ``PAM``
+# @param pam Whether to include SIMP's ``::pam`` class SIMP to manage ``PAM``
 #
-# @param pki Whether to include SIMP’s ``::pki`` class and use ``pki::copy`` to
+# @param pki Whether to include SIMP's ``::pki`` class and use ``pki::copy`` to
 #   distribute PKI certificates to the correct locations.
 #   If false, don't include SIMP's ``::pki`` class, and don't use ``::pki::copy``.
 #   If true,  don't include SIMP's ``::pki`` class, but use ``::pki::copy``.
@@ -54,7 +54,7 @@
 #
 # @param sssd Whether to use ``SSSD``
 #
-# @param stunnel Whether to include SIMP’s ``::stunnel`` class and use it to
+# @param stunnel Whether to include SIMP's ``::stunnel`` class and use it to
 #   secure server-to-server communications in applicable modules
 #
 # @param syslog Whether to include SIMP's ``::rsyslog`` class and configure

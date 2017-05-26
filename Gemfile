@@ -13,9 +13,9 @@ group :test do
   gem 'hiera-puppet-helper'
   gem 'puppetlabs_spec_helper'
   gem 'metadata-json-lint'
+  gem 'puppet-strings'
   gem 'puppet-lint-empty_string-check',   :require => false
   gem 'puppet-lint-trailing_comma-check', :require => false
-  gem 'puppet-strings'
   gem 'simp-rspec-puppet-facts', ENV.fetch('SIMP_RSPEC_PUPPET_FACTS_VERSION', '~> 1.3')
   gem 'simp-rake-helpers', ENV.fetch('SIMP_RAKE_HELPERS_VERSION', '~> 3.0')
 end
@@ -35,8 +35,6 @@ group :development do
 end
 
 group :system_tests do
-  # This patch is required to fix Beaker's broken `aio` handling
-  gem 'beaker', :git => 'https://github.com/trevor-vaughan/beaker.git', :branch => 'BKR-978-2.51.0'
   gem 'beaker-rspec'
   gem 'simp-beaker-helpers', ENV.fetch('SIMP_BEAKER_HELPERS_VERSION', '~> 1.5')
 end
