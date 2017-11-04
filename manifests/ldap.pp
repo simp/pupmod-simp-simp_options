@@ -34,9 +34,9 @@ class simp_options::ldap (
   String              $sync_pw,
   String              $sync_hash,
   String              $base_dn    = simplib::ldap::domain_to_dn(),
-  String              $bind_dn    = "cn=hostAuth,ou=Hosts,${simp_options::ldap::base_dn}",
-  String              $sync_dn    = "cn=LDAPSync,ou=Hosts,${simp_options::ldap::base_dn}",
-  String              $root_dn    = "cn=LDAPAdmin,ou=People,${simp_options::ldap::base_dn}",
+  String              $bind_dn    = "cn=hostAuth,ou=Hosts,${base_dn}",
+  String              $sync_dn    = "cn=LDAPSync,ou=Hosts,${base_dn}",
+  String              $root_dn    = "cn=LDAPAdmin,ou=People,${base_dn}",
   Simplib::URI        $master     = "ldap://${simp_options::puppet::server}",
   Array[Simplib::URI] $uri        = ["ldap://${simp_options::puppet::server}"]
 ){

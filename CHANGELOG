@@ -1,3 +1,7 @@
+* Fri Nov 03 2017 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.0.4-0
+- Fix parameter issues in simp_options::ldap
+- Fix PE support in simp_options::puppet
+
 * Sat Apr 15 2017 Dylan Cochran <dylan.cochran@onyxpoint.com> - 1.0.3-0
 - Add simp_options::libkv
 - Update puppet requirement in metadata.json

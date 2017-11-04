@@ -16,8 +16,8 @@
 class simp_options::puppet (
   Simplib::Host $server,
   Simplib::Host $ca,
-  Simplib::Port $ca_port = 8141,
-  Simplib::Serverdistribution $server_distribution = 'PC1'
+  Simplib::Serverdistribution $server_distribution = fact('pe_build') ? { Undef => 'PC1', default => 'PE' },
+  Simplib::Port $ca_port = $server_distribution ? { 'PE' => 8140, default => 8141 }
 ){
   assert_private()
   validate_net_list($server)
