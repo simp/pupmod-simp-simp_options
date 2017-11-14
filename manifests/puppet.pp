@@ -16,7 +16,7 @@
 class simp_options::puppet (
   Simplib::Host $server,
   Simplib::Host $ca,
-  Simplib::Serverdistribution $server_distribution = fact('pe_build') ? { Undef => 'PC1', default => 'PE' },
+  Simplib::Serverdistribution $server_distribution = $facts['is_pe'] ? { true => 'PE', default => 'PC1' },
   Simplib::Port $ca_port = $server_distribution ? { 'PE' => 8140, default => 8141 }
 ){
   assert_private()
