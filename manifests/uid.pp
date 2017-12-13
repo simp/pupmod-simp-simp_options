@@ -13,7 +13,7 @@
 # @author SIMP Team - https://simp-project.com
 #
 class simp_options::uid (
-  Integer[0]           $min = 1000,
+  Integer[0]           $min = pick(to_integer($facts['uid_min']), 1000),
   Optional[Integer[1]] $max = undef
 ){
   assert_private()
