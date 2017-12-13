@@ -13,8 +13,8 @@
 # @author SIMP Team - https://simp-project.com
 #
 class simp_options::gid (
-  Integer[0]           $min = pick(to_integer($facts['uid_min']), 1000),
-  Optional[Integer[1]] $max = undef
+  Integer[0]           $min = pick(fact('login_defs.gid_min'), 1000),
+  Optional[Integer[1]] $max = fact('login_defs.gid_max')
 ){
   assert_private()
 }
