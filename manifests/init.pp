@@ -107,6 +107,8 @@ class simp_options (
   include '::simp_options::openssl'
   include '::simp_options::puppet'
   include '::simp_options::rsync'
+  include '::simp_options::uid'
+  include '::simp_options::gid'
 
   if $ldap {
     include '::simp_options::ldap'

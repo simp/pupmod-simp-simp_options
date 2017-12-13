@@ -7,6 +7,8 @@ shared_examples_for  'a simp_options class' do
   it { is_expected.to contain_class('simp_options::openssl') }
   it { is_expected.to contain_class('simp_options::puppet') }
   it { is_expected.to contain_class('simp_options::rsync') }
+  it { is_expected.to contain_class('simp_options::uid') }
+  it { is_expected.to contain_class('simp_options::gid') }
 end
 
 describe 'simp_options' do

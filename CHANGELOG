@@ -1,3 +1,7 @@
+* Wed Dec 13 2017 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.1.0-0
+- Added simp_options::uid and simp_options::gid classes for ID limit
+  consistency across the entire infrastructure
+
 * Fri Nov 03 2017 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.0.4-0
 - Fix parameter issues in simp_options::ldap
 - Fix PE support in simp_options::puppet
