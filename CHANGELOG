@@ -1,3 +1,7 @@
+* Tue Apr 17 2018 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.2.0-0
+- Added simp_options::reboot_notifications to enable users to globally toggle
+  reboot notifications
+
 * Wed Dec 13 2017 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.1.0-0
 - Added simp_options::uid and simp_options::gid classes for ID limit
   consistency across the entire infrastructure
