@@ -12,7 +12,7 @@
 #   Enable SIMP use of ``ClamAV``
 #
 # @param fips
-#   Whether to enable ``FIPS`` mode for the system in accordaince with the SIMP
+#   Whether to enable ``FIPS`` mode for the system in accordance with the SIMP
 #   ``fips`` module
 #
 #   * This parameter enforces strict compliance with ``FIPS-140-2``
