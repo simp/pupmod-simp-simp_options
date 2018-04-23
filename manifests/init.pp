@@ -48,10 +48,6 @@
 #   If true,  don't include SIMP's ``::pki`` class, but use ``::pki::copy``.
 #   If 'simp', include SIMP's ``::pki`` class, and use ``::pki::copy``.
 #
-# @param selinux Whether to include SIMP's ``::selinux`` class (which
-#   effectively manages the ``SELinux`` enforcement and mode) and manage
-#   SIMP-specific ``SELinux`` configurations
-#
 # @param sssd Whether to use ``SSSD``
 #
 # @param stunnel Whether to include SIMP's ``::stunnel`` class and use it to
@@ -91,7 +87,6 @@ class simp_options (
   Boolean                       $logrotate      = false,
   Boolean                       $pam            = false,
   Variant[Boolean,Enum['simp']] $pki            = false,
-  Boolean                       $selinux        = false,
   Boolean                       $sssd           = false,
   Boolean                       $stunnel        = false,
   Boolean                       $syslog         = false,

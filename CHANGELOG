@@ -1,3 +1,7 @@
+* Mon Apr 23 2018 Jeanne Greulich <jeanne.greulich@onyxpoint.com> - 1.2.0-0
+- Removed simp_options::selinux.  Conflicts between this setting
+  and what was in the scenario class lists was causing unexpected results.
+
 * Wed Dec 13 2017 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.1.0-0
 - Added simp_options::uid and simp_options::gid classes for ID limit
   consistency across the entire infrastructure
