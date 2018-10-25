@@ -64,7 +64,8 @@
 #
 #   If you need this to be more (or less) restrictive for a given class, you
 #   can override it for the specific class via that class' parameters.
-# @param package_ensure The default ensure parmeter for packages.
+#
+# @param package_ensure The default ensure parameter for packages.
 #
 #   Can be either 'latest' or 'installed'; currently defaults to 'latest' for
 #   historical reasons. Default may change in a newer version.
@@ -97,23 +98,23 @@ class simp_options (
 ){
   validate_net_list($trusted_nets)
 
-  include '::simp_options::dns'
-  include '::simp_options::ntpd'
-  include '::simp_options::openssl'
-  include '::simp_options::puppet'
-  include '::simp_options::rsync'
-  include '::simp_options::uid'
-  include '::simp_options::gid'
+  include 'simp_options::dns'
+  include 'simp_options::ntpd'
+  include 'simp_options::openssl'
+  include 'simp_options::puppet'
+  include 'simp_options::rsync'
+  include 'simp_options::uid'
+  include 'simp_options::gid'
 
   if $ldap {
-    include '::simp_options::ldap'
+    include 'simp_options::ldap'
   }
 
   if $pki {
-    include '::simp_options::pki'
+    include 'simp_options::pki'
   }
 
   if $syslog {
-    include '::simp_options::syslog'
+    include 'simp_options::syslog'
   }
 }

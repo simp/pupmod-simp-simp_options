@@ -6,7 +6,7 @@
 class simp_options::openssl::params (
 ) {
   assert_private()
-  include '::simp_options'
+  include 'simp_options'
 
   if $::simp_options::fips or $facts['fips_enabled'] {
     if $facts['fips_ciphers'] {
