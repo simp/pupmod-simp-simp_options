@@ -1,3 +1,6 @@
+* Wed Nov 07 2018 Liz Nemsick <lnemsick.simp@gmail.com> - 1.2.1-0
+- Update badges and contribution guide URL in README.md
+
 * Fri Aug 24 2018 Nick Miller <nick.miller@onyxpoint.com> - 1.2.1-0
 - Add Puppet 5 and OEL Support
 
