@@ -96,7 +96,7 @@ class simp_options (
   String                        $package_ensure = 'latest',
   Boolean                       $libkv          = false,
 ){
-  validate_net_list($trusted_nets)
+  simplib::validate_net_list($trusted_nets)
 
   include 'simp_options::dns'
   include 'simp_options::ntpd'

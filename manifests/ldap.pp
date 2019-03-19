@@ -41,6 +41,6 @@ class simp_options::ldap (
   Array[Simplib::URI] $uri        = ["ldap://${simp_options::puppet::server}"]
 ){
   assert_private()
-  validate_uri_list($master,['ldap','ldaps'])
-  validate_uri_list($uri,['ldap','ldaps'])
+  simplib::validate_uri_list($master,['ldap','ldaps'])
+  simplib::validate_uri_list($uri,['ldap','ldaps'])
 }
