@@ -1,3 +1,9 @@
+* Tue Mar 19 2019 Liz Nemsick <lnemsick.simp@gmail.com> - 1.2.3-0
+- Use simplib::validate_net_list in lieu of deprecated Puppet 3
+  validate_net_list
+- Use simplib::validate_uri_list in lieu of deprecated Puppet 3
+  validate_uri_list
+
 * Thu Mar 07 2019 Liz Nemsick <lnemsick.simp@gmail.com> - 1.2.2-0
 - Update the upper bound of stdlib to < 6.0.0
 - Update a URL in the README.md

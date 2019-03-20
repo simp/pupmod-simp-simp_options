@@ -20,6 +20,6 @@ class simp_options::puppet (
   Simplib::Port $ca_port = $server_distribution ? { 'PE' => 8140, default => 8141 }
 ){
   assert_private()
-  validate_net_list($server)
-  validate_net_list($ca)
+  simplib::validate_net_list($server)
+  simplib::validate_net_list($ca)
 }

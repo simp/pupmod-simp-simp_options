@@ -19,5 +19,5 @@ class simp_options::rsync (
   Integer       $timeout = 1
 ){
   assert_private()
-  validate_net_list($server)
+  simplib::validate_net_list($server)
 }

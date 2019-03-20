@@ -14,6 +14,6 @@ class simp_options::syslog (
   Array[Simplib::Host] $failover_log_servers = []
 ){
   assert_private()
-  validate_net_list($log_servers)
-  validate_net_list($failover_log_servers)
+  simplib::validate_net_list($log_servers)
+  simplib::validate_net_list($failover_log_servers)
 }
