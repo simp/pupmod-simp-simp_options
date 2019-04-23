@@ -1,3 +1,6 @@
+* Tue Apr 23 2019 Joseph Sharkey <shark.bruhaha@gmail.com> - 1.2.4-0
+- Updated .travis.yml, .gitlab-ci.yml, .ruby-version
+
 * Tue Mar 19 2019 Liz Nemsick <lnemsick.simp@gmail.com> - 1.2.3-0
 - Use simplib::validate_net_list in lieu of deprecated Puppet 3
   validate_net_list
