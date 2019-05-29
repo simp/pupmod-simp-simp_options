@@ -1,7 +1,4 @@
-#
-# simp_options::dns class
-#
-# Sets up DNS configuration variables
+# @summary Sets up DNS configuration variables
 #
 # @param search The DNS search list. Remember to put these in the appropriate
 #   order for your environment.
@@ -12,13 +9,16 @@
 #   will configure themselves as caching DNS servers pointing to the other
 #   entries in the list.
 #
-#   Also, if you have a system that's including SIMP's ``named`` class and is
-#   **not** in this list, then you'll need to set a variable at the top of that
-#   node entry called ``$named_server`` to ``true``.
+#   ---------------------------------------------------------------------------
+#   If you are using the SIMP ``resolv`` module, and the system is a DNS server
+#   using the SIMP ``named`` module but you wish to have your node point to a
+#   different DNS server for primary DNS resolution, then you MUST set
+#   ``resolv::named_server`` to ``true`` via Hiera.
 #
 #   This will get around the convenience logic that was put in place to handle
 #   the caching entries and will not attempt to convert your system to a
 #   caching DNS server.
+#   ---------------------------------------------------------------------------
 #
 # @author SIMP Team - https://simp-project.com
 #
