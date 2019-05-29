@@ -12,7 +12,7 @@
 #   ---------------------------------------------------------------------------
 #   If you are using the SIMP ``resolv`` module, and the system is a DNS server
 #   using the SIMP ``named`` module but you wish to have your node point to a
-#   different DNS server for primary DNS resolution then you MUST set
+#   different DNS server for primary DNS resolution, then you MUST set
 #   ``resolv::named_server`` to ``true`` via Hiera.
 #
 #   This will get around the convenience logic that was put in place to handle
