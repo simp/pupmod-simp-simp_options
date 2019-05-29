@@ -23,7 +23,7 @@ stages:
   - name: deploy
     if: 'tag IS present'
 
-#bundler_args: --without development system_tests --path .vendor
+bundler_args: --without development system_tests --path .vendor
 
 notifications:
   email: false
@@ -36,7 +36,7 @@ addons:
 before_install:
   - rm -f Gemfile.lock
   - gem install -v '~> 1.16' bundler
-  - for x in "${HOME}/.rvm/gems/*"; do gem uninstall -i $x -v '>= 1.17' bundler || true; gem uninstall -i "${x}@global" -v '>= 1.17' bundler || true; done
+  - for x in ${HOME}/.rvm/gems/*; do gem uninstall -i "${x}" -v '>= 1.17' bundler || true; gem uninstall -i "${x}@global" -v '>= 1.17' bundler || true; done
 
 global:
   - STRICT_VARIABLES=yes
