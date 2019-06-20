@@ -7,12 +7,13 @@ checks:
       value: true
     type: puppet-class-parameter
     controls:
-      nist_800_53_rev4:AU-14:1: true
-      nist_800_53_rev4:AU-1:b: true
-      nist_800_53_rev4:AU-2:a: true
-      nist_800_53_rev4:AU-2:c: true
-      nist_800_53_rev4:AU-2:d: true
-      nist_800_53_rev4:AU-10: true
+      nist_800_53:rev4: true
+      nist_800_53:rev4:AU-14:1: true
+      nist_800_53:rev4:AU-1:b: true
+      nist_800_53:rev4:AU-2:a: true
+      nist_800_53:rev4:AU-2:c: true
+      nist_800_53:rev4:AU-2:d: true
+      nist_800_53:rev4:AU-10: true
       disa_stig: true
       RHEL-07-030310: true
       RHEL-07-030020: true
@@ -21,7 +22,7 @@ checks:
       cci:CCI-002234: true
       cci:CCI-000135: true
     identifiers:
-      nist_800_53_rev4:
+      nist_800_53:rev4:
       - AU-14:1
       - AU-1:b
       - AU-2:a
@@ -41,11 +42,12 @@ checks:
       value: true
     type: puppet-class-parameter
     controls:
-      nist_800_53_rev4:SI-3:a: true
+      nist_800_53:rev4: true
+      nist_800_53:rev4:SI-3:a: true
       disa_stig: true
       SI-3:a: true
     identifiers:
-      nist_800_53_rev4:
+      nist_800_53:rev4:
       - SI-3:a
       disa_stig:
       - SI-3:a
@@ -58,17 +60,18 @@ checks:
       value: true
     type: puppet-class-parameter
     controls:
-      nist_800_53_rev4:AC-3: true
-      nist_800_53_rev4:AC-17A:2: true
-      nist_800_53_rev4:IA-7: true
-      nist_800_53_rev4:SC-13: true
+      nist_800_53:rev4: true
+      nist_800_53:rev4:AC-3: true
+      nist_800_53:rev4:AC-17A:2: true
+      nist_800_53:rev4:IA-7: true
+      nist_800_53:rev4:SC-13: true
       disa_stig: true
       AC-3: true
       AC-17A:2: true
       IA-7: true
       SC-13: true
     identifiers:
-      nist_800_53_rev4:
+      nist_800_53:rev4:
       - AC-3
       - AC-17A:2
       - IA-7
@@ -84,11 +87,12 @@ checks:
       value: true
     type: puppet-class-parameter
     controls:
-      nist_800_53_rev4:AC-4: true
+      nist_800_53:rev4: true
+      nist_800_53:rev4:AC-4: true
       disa_stig: true
       AC-4: true
     identifiers:
-      nist_800_53_rev4:
+      nist_800_53:rev4:
       - AC-4
       disa_stig:
       - AC-4
@@ -101,11 +105,12 @@ checks:
       value: true
     type: puppet-class-parameter
     controls:
-      nist_800_53_rev4:SC-13: true
+      nist_800_53:rev4: true
+      nist_800_53:rev4:SC-13: true
       disa_stig: true
       SC-13: true
     identifiers:
-      nist_800_53_rev4:
+      nist_800_53:rev4:
       - SC-13
       disa_stig:
       - SC-13
@@ -115,11 +120,12 @@ checks:
       value: false
     type: puppet-class-parameter
     controls:
-      nist_800_53_rev4:SC-8: true
+      nist_800_53:rev4: true
+      nist_800_53:rev4:SC-8: true
       disa_stig: true
       SC-8: true
     identifiers:
-      nist_800_53_rev4:
+      nist_800_53:rev4:
       - SC-8
       disa_stig:
       - SC-8
@@ -129,11 +135,12 @@ checks:
       value: false
     type: puppet-class-parameter
     controls:
-      nist_800_53_rev4:IA-3: true
+      nist_800_53:rev4: true
+      nist_800_53:rev4:IA-3: true
       disa_stig: true
       IA-3: true
     identifiers:
-      nist_800_53_rev4:
+      nist_800_53:rev4:
       - IA-3
       disa_stig:
       - IA-3
@@ -143,11 +150,12 @@ checks:
       value: true
     type: puppet-class-parameter
     controls:
-      nist_800_53_rev4:IA-2: true
+      nist_800_53:rev4: true
+      nist_800_53:rev4:IA-2: true
       disa_stig: true
       IA-2: true
     identifiers:
-      nist_800_53_rev4:
+      nist_800_53:rev4:
       - IA-2
       disa_stig:
       - IA-2
@@ -157,15 +165,16 @@ checks:
       value: true
     type: puppet-class-parameter
     controls:
-      nist_800_53_rev4:AU-4: true
-      nist_800_53_rev4:AU-5:b: true
-      nist_800_53_rev4:AU-11: true
+      nist_800_53:rev4: true
+      nist_800_53:rev4:AU-4: true
+      nist_800_53:rev4:AU-5:b: true
+      nist_800_53:rev4:AU-11: true
       disa_stig: true
       RHEL-07-030320: true
       SRG-OS-000341-GPOS-00132: true
       cci:CCI-001849: true
     identifiers:
-      nist_800_53_rev4:
+      nist_800_53:rev4:
       - AU-4
       - AU-5:b
       - AU-11
@@ -179,11 +188,12 @@ checks:
       value: true
     type: puppet-class-parameter
     controls:
-      nist_800_53_rev4:IA-5: true
+      nist_800_53:rev4: true
+      nist_800_53:rev4:IA-5: true
       disa_stig: true
       IA-5: true
     identifiers:
-      nist_800_53_rev4:
+      nist_800_53:rev4:
       - IA-5
       disa_stig:
       - IA-5
@@ -193,13 +203,14 @@ checks:
       value: simp
     type: puppet-class-parameter
     controls:
-      nist_800_53_rev4:SC-8: true
-      nist_800_53_rev4:IA-3: true
+      nist_800_53:rev4: true
+      nist_800_53:rev4:SC-8: true
+      nist_800_53:rev4:IA-3: true
       disa_stig: true
       SC-8: true
       IA-3: true
     identifiers:
-      nist_800_53_rev4:
+      nist_800_53:rev4:
       - SC-8
       - IA-3
       disa_stig:
@@ -211,11 +222,12 @@ checks:
       value: true
     type: puppet-class-parameter
     controls:
-      nist_800_53_rev4:IA-2: true
+      nist_800_53:rev4: true
+      nist_800_53:rev4:IA-2: true
       disa_stig: true
       IA-2: true
     identifiers:
-      nist_800_53_rev4:
+      nist_800_53:rev4:
       - IA-2
       disa_stig:
       - IA-2
@@ -225,17 +237,18 @@ checks:
       value: true
     type: puppet-class-parameter
     controls:
-      nist_800_53_rev4:SC-8: true
-      nist_800_53_rev4:SC-8:1: true
-      nist_800_53_rev4:SC-8:2: true
-      nist_800_53_rev4:SC-23: true
+      nist_800_53:rev4: true
+      nist_800_53:rev4:SC-8: true
+      nist_800_53:rev4:SC-8:1: true
+      nist_800_53:rev4:SC-8:2: true
+      nist_800_53:rev4:SC-23: true
       disa_stig: true
       SC-8: true
       SC-8:1: true
       SC-8:2: true
       SC-23: true
     identifiers:
-      nist_800_53_rev4:
+      nist_800_53:rev4:
       - SC-8
       - SC-8:1
       - SC-8:2
@@ -251,15 +264,16 @@ checks:
       value: true
     type: puppet-class-parameter
     controls:
-      nist_800_53_rev4:AU-3:2: true
-      nist_800_53_rev4:AU-4:1: true
-      nist_800_53_rev4:AU-9: true
+      nist_800_53:rev4: true
+      nist_800_53:rev4:AU-3:2: true
+      nist_800_53:rev4:AU-4:1: true
+      nist_800_53:rev4:AU-9: true
       disa_stig: true
       AU-3:2: true
       AU-4:1: true
       AU-9: true
     identifiers:
-      nist_800_53_rev4:
+      nist_800_53:rev4:
       - AU-3:2
       - AU-4:1
       - AU-9
@@ -273,11 +287,12 @@ checks:
       value: true
     type: puppet-class-parameter
     controls:
-      nist_800_53_rev4:AC-4: true
+      nist_800_53:rev4: true
+      nist_800_53:rev4:AC-4: true
       disa_stig: true
       AC-4: true
     identifiers:
-      nist_800_53_rev4:
+      nist_800_53:rev4:
       - AC-4
       disa_stig:
       - AC-4
