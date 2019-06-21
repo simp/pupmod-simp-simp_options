@@ -10,33 +10,33 @@ describe 'compliance_markup', type: :class do
 
   compliance_profiles = [
     'disa_stig',
-    'nist_800_53',
     'nist_800_53_rev4'
   ]
 
-  # A list of classes that we expect to be included for compliance
-  #
-  # This needs to be well defined since we can also manipulate defined type
-  # defaults
-  expected_classes = [
-    'simp_options'
-  ]
+  compliance_profiles.each do |target_profile|
+    # A list of classes that we expect to be included for compliance
+    #
+    # This needs to be well defined since we can also manipulate defined type
+    # defaults
+    expected_classes = [
+      'simp_options',
+    ]
 
-  allowed_failures = {
-    'documented_missing_parameters' => [],
-    'documented_missing_resources' => []
-  }
+    allowed_failures = {
+      'documented_missing_parameters' => [],
+      'documented_missing_resources' => []
+    }
 
-  on_supported_os.each do |os, os_facts|
-    context "on #{os}" do
-      let(:hieradata){ 'compliance-engine' }
-      let(:facts){ os_facts }
+    on_supported_os.each do |os, os_facts|
+      context "on #{os}" do
+        let(:hieradata){ "#{target_profile}-compliance-engine" }
+        let(:facts){ os_facts }
 
-      compliance_profiles.each do |target_profile|
+        #compliance_profiles.each do |target_profile|
         context "with compliance profile '#{target_profile}'" do
-          let(:pre_condition) {%(
-            #{expected_classes.map{|c| %{include #{c}}}.join("\n")}
-          )}
+          let(:pre_condition) {
+            %(#{expected_classes.map{|c| %{include #{c}}}.join("\n")})
+          }
 
           it { is_expected.to compile }
 
