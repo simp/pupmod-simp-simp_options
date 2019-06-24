@@ -296,3 +296,26 @@ checks:
       - AC-4
       disa_stig:
       - AC-4
+  oval:com.puppet.forge.simp.simp_options.logrotate:
+    settings:
+      parameter: simp_options::logrotate
+      value: true
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:AU-3:2: true
+      nist_800_53:rev4:AU-4:1: true
+      nist_800_53:rev4:AU-9: true
+      disa_stig: true
+      AU-3:2: true
+      AU-4:1: true
+      AU-9: true
+    identifiers:
+      nist_800_53:rev4:
+      - AU-3:2
+      - AU-4:1
+      - AU-9
+      disa_stig:
+      - AU-3:2
+      - AU-4:1
+      - AU-9
