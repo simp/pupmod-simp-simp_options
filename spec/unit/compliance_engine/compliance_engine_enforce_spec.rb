@@ -23,7 +23,7 @@ describe 'compliance_markup', type: :class do
 
   allowed_failures = {
     'documented_missing_parameters' => [],
-    'documented_missing_resources' => [] 
+    'documented_missing_resources' => []
   }
 
   on_supported_os.each do |os, os_facts|
