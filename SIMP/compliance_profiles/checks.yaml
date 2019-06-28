@@ -1,0 +1,538 @@
+---
+version: 2.0.0
+checks:
+  oval:com.puppet.forge.simp.simp_options.auditd:
+    settings:
+      parameter: simp_options::auditd
+      value: true
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:AU-1:b: true
+      nist_800_53:rev4:AU-2:a: true
+      nist_800_53:rev4:AU-2:c: true
+      nist_800_53:rev4:AU-2:d: true
+      nist_800_53:rev4:AU-3:2: true
+      nist_800_53:rev4:AU-4:1: true
+      nist_800_53:rev4:AU-9: true
+      nist_800_53:rev4:AU-10: true
+      nist_800_53:rev4:AU-14:1: true
+      disa_stig: true
+      RHEL-07-030310: true
+      RHEL-07-030020: true
+      SRG-OS-000038-GPOS-00016: true
+      SRG-OS-000039-GPOS-00017: true
+      SRG-OS-000327-GPOS-00127: true
+      SRG-OS-000042-GPOS-00020: true
+      SRG-OS-000042-GPOS-00021: true
+      cci:CCI-000131: true
+      cci:CCI-000126: true
+      cci:CCI-002234: true
+      cci:CCI-000135: true
+    identifiers:
+      nist_800_53:rev4:
+        - AU-14:1
+        - AU-1:b
+        - AU-2:a
+        - AU-2:c
+        - AU-2:d
+        - AU-3:2
+        - AU-4:1
+        - AU-9
+        - AU-10
+      disa_stig:
+        - RHEL-07-030310
+        - RHEL-07-030020
+        - SRG-OS-000038-GPOS-00016
+        - SRG-OS-000039-GPOS-00017
+        - SRG-OS-000327-GPOS-00127
+        - SRG-OS-000042-GPOS-00021
+        - SRG-OS-000042-GPOS-00020
+        - CCI-000131
+        - CCI-000126
+        - CCI-002234
+        - CCI-000135
+  oval:com.puppet.forge.simp.simp_options.clamav:
+    settings:
+      parameter: simp_options::clamav
+      value: true
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:SI-3:a: true
+      disa_stig: true
+      SI-3:a: true
+    identifiers:
+      nist_800_53:rev4:
+        - SI-3:a
+      disa_stig:
+        - SI-3:a
+    oval-ids:
+      - xccdf_org:ssgproject:content_rule_install_mcafee_antivirus
+      - install_mcafee_antivirus
+  oval:com.puppet.forge.simp.simp_options.fips:
+    settings:
+      parameter: simp_options::fips
+      value: true
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:AC-3: true
+      nist_800_53:rev4:AC-17A:2: true
+      nist_800_53:rev4:IA-7: true
+      nist_800_53:rev4:SC-13: true
+      disa_stig: true
+      AC-3: true
+      AC-17A:2: true
+      IA-7: true
+      SC-13: true
+    identifiers:
+      nist_800_53:rev4:
+        - AC-3
+        - AC-17A:2
+        - IA-7
+        - SC-13
+      disa_stig:
+        - AC-3
+        - AC-17A:2
+        - IA-7
+        - SC-13
+  oval:com.puppet.forge.simp.simp_options.firewall:
+    settings:
+      parameter: simp_options::firewall
+      value: true
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:AC-4: true
+      nist_800_53:rev4:AU-4:1: true
+      nist_800_53:rev4:CM-7: true
+      disa_stig: true
+      RHEL-07-030320: true
+      RHEL-07-040920: true
+      SRG-OS-000341-GPOS-00132: true
+      SRG-OS-000480-GPOS-00227: true
+      cci:CCI-000366: true
+      cci:CCI-001849: true
+      AC-4: true
+    identifiers:
+      nist_800_53:rev4:
+        - AC-4
+        - AU-4:1
+        - CM-7
+      disa_stig:
+        - AC-4
+        - RHEL-07-030320
+        - RHEL-07-040920
+        - SRG-OS-000341-GPOS-00132
+        - SRG-OS-000480-GPOS-00227
+        - CCI-000366
+        - CCI-001849
+    oval-ids:
+      - xccdf_org:ssgproject:content_rule_service_firewalld_enabled
+      - service_firewalld_enabled
+  oval:com.puppet.forge.simp.simp_options.haveged:
+    settings:
+      parameter: simp_options::haveged
+      value: true
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:SC-13: true
+      disa_stig: true
+      SC-13: true
+    identifiers:
+      nist_800_53:rev4:
+        - SC-13
+      disa_stig:
+        - SC-13
+  oval:com.puppet.forge.simp.simp_options.ipsec:
+    settings:
+      parameter: simp_options::ipsec
+      value: false
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:SC-8: true
+      disa_stig: true
+      SC-8: true
+    identifiers:
+      nist_800_53:rev4:
+        - SC-8
+      disa_stig:
+        - SC-8
+  oval:com.puppet.forge.simp.simp_options.kerberos:
+    settings:
+      parameter: simp_options::kerberos
+      value: false
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:IA-3: true
+      disa_stig: true
+      IA-3: true
+    identifiers:
+      nist_800_53:rev4:
+        - IA-3
+      disa_stig:
+        - IA-3
+  oval:com.puppet.forge.simp.simp_options.ldap:
+    settings:
+      parameter: simp_options::ldap
+      value: true
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:IA-1: true
+      nist_800_53:rev4:IA-2: true
+      disa_stig: true
+      IA-2: true
+      RHEL-07-010000: true
+      SRG-OS-000001-GPOS-00001: true
+      cci:CCI-000015: true
+    identifiers:
+      nist_800_53:rev4:
+        - IA-1
+        - IA-2
+      disa_stig:
+        - IA-2
+        - RHEL-07-010000
+        - SRG-OS-000001-GPOS-00001
+        - CCI-000015
+  oval:com.puppet.forge.simp.simp_options.logrotate:
+    settings:
+      parameter: simp_options::logrotate
+      value: true
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:AU-3:2: true
+      nist_800_53:rev4:AU-4: true
+      nist_800_53:rev4:AU-4:1: true
+      nist_800_53:rev4:AU-5:b: true
+      nist_800_53:rev4:AU -9: true
+      nist_800_53:rev4:AU-11: true
+      disa_stig: true
+      AU-3:2: true
+      AU-4:1: true
+      AU-9: true
+      RHEL-07-030320: true
+      SRG-OS-000341-GPOS-00132: true
+      cci:CCI-001849: true
+    identifiers:
+      nist_800_53:rev4:
+        - AU-3:2
+        - AU-4
+        - AU-4:1
+        - AU-5:b
+        - AU-9
+        - AU-11
+      disa_stig:
+        - AU-3:2
+        - AU-4:1
+        - AU:9
+        - RHEL-07-030320
+        - SRG-OS-000341-GPOS-00132
+        - CCI-001849
+  oval:com.puppet.forge.simp.simp_options.pam:
+    settings:
+      parameter: simp_options::pam
+      value: true
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:IA-5: true
+      disa_stig: true
+      IA-5: true
+    identifiers:
+      nist_800_53:rev4:
+        - IA-5
+      disa_stig:
+        - IA-5
+  oval:com.puppet.forge.simp.simp_options.pki:
+    settings:
+      parameter: simp_options::pki
+      value: simp
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:IA-3: true
+      nist_800_53:rev4:SC-i8: true
+      nist_800_53:rev4:SC-8: true
+      nist_800_53:rev4:SC-8:1: true
+      nist_800_53:rev4:SC-8:2: true
+      nist_800_53:rev4:SC-23: true
+      disa_stig: true
+      IA-3: true
+      RHEL-07-040240: true
+      RHEL-07-040260: true
+      RHEL-07-04092: true
+      SC-8: true
+      SRG-OS-000066-GPOS-00034: true
+      SRG-OS-000403-GPOS-00182: true
+      SRG-OS-000423-GPOS-00187: true
+      SRG-OS-000423-GPOS-00188: true
+      SRG-OS-000423-GPOS-00189: true
+      SRG-OS-000423-GPOS-00190: true
+      SRG-OS-000480-GPOS-00227: true
+      cci:CCI-000185: true
+      cci:CCI-002418: true
+      cci:CCI-002421: true
+      cci:CCI-002420: true
+      cci:CCI-002422: true
+      cci:CCI-002470: true
+      cci:CCI-000366: true
+    identifiers:
+      nist_800_53:rev4:
+        - IA-3
+        - SC-i8
+        - SC-8
+        - SC-8:1
+        - SC-8:2
+        - SC-23
+      disa_stig:
+        - IA-3
+        - RHEL-07-040240
+        - RHEL-07-040260
+        - RHEL-07-040920
+        - SC-8
+        - SRG-OS-000066-GPOS-00034
+        - SRG-OS-000403-GPOS-00182
+        - SRG-OS-000423-GPOS-00187
+        - SRG-OS-000423-GPOS-00188
+        - SRG-OS-000423-GPOS-00189
+        - SRG-OS-000423-GPOS-00190
+        - SRG-OS-000480-GPOS-00227
+        - CCI-000185
+        - CCI-002418
+        - CCI-002421
+        - CCI-002420
+        - CCI-002422
+        - CCI-002470
+        - CCI-000366
+  oval:com.puppet.forge.simp.simp_options.sssd:
+    settings:
+      parameter: simp_options::sssd
+      value: true
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:IA-2: true
+      disa_stig: true
+      IA-2: true
+    identifiers:
+      nist_800_53:rev4:
+        - IA-2
+      disa_stig:
+        - IA-2
+  oval:com.puppet.forge.simp.simp_options.stunnel:
+    settings:
+      parameter: simp_options::stunnel
+      value: true
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:SC-8: true
+      nist_800_53:rev4:SC-8:1: true
+      nist_800_53:rev4:SC-8:2: true
+      nist_800_53:rev4:SC-13: true
+      nist_800_53:rev4:SC-23: true
+      disa_stig: true
+      SC-8: true
+      SC-8:1: true
+      SC-8:2: true
+      SC-23: true
+    identifiers:
+      nist_800_53:rev4:
+        - SC-8
+        - SC-8:1
+        - SC-8:2
+        - SC-13
+        - SC-23
+      disa_stig:
+        - SC-8
+        - SC-8:1
+        - SC-8:2
+        - SC-23
+  oval:com.puppet.forge.simp.simp_options.syslog:
+    settings:
+      parameter: simp_options::syslog
+      value: true
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:AU-3:2: true
+      nist_800_53:rev4:AU-4: true
+      nist_800_53:rev4:AU-4:1: true
+      nist_800_53:rev4:AU-9: true
+      nist_800_53:rev4:SC-8: true
+      nist_800_53:rev4:SC-8:1: true
+      nist_800_53:rev4:SC-8:2: true
+      nist_800_53:rev4:SC-13: true
+      nist_800_53:rev4:SC-23: true
+      disa_stig: true
+      AU-3:2: true
+      AU-4:1: true
+      AU-9: true
+      RHEL-07-030310: true
+      RHEL-07-030620: true
+      RHEL-07-030770: true
+      SRG-OS-000327-GPOS-00127: true
+      SRG-OS-000471-GPOS-00215: true
+      SRG-OS-000480-GPOS-00227: true
+      cci:CCI-002234: true
+      cci:CCI-000172: true
+      cci:CCI-001744: true
+      cci:CCI-000366: true
+      SRG-OS-000363-GPOS-00150: true
+    identifiers:
+      nist_800_53:rev4:
+        - AU-3:2
+        - AU-4
+        - AU-4:1
+        - AU-9
+        - SC-8
+        - SC-8:1
+        - SC-8:2
+        - SC-13
+        - SC-23
+        - SI-3:a
+      disa_stig:
+        - AU-3:2
+        - AU-4:1
+        - AU-9
+        - RHEL-07-030310
+        - RHEL-07-030620
+        - RHEL-07-030770
+        - SRG-OS-000327-GPOS-00127
+        - SRG-OS-000471-GPOS-00215
+        - SRG-OS-000480-GPOS-00227
+        - CCI-002234
+        - CCI-000172
+        - CCI-001744
+        - CCI-000366
+        - SRG-OS-000363-GPOS-00150
+  oval:com.puppet.forge.simp.simp_options.tcpwrappers:
+    settings:
+      parameter: simp_options::tcpwrappers
+      value: true
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:AC-4: true
+      disa_stig: true
+      AC-4: true
+      RHEL-07-040810: true
+      SRG-OS-000480-GPOS-00227: true
+      cci:CCI-000366: true
+    identifiers:
+      nist_800_53:rev4:
+        - AC-4
+      disa_stig:
+        - AC-4
+        - RHEL-07-040810
+        - SRG-OS-000480-GPOS-00227
+        - CCI-000366
+  oval:com.puppet.forge.simp.simp_options.uid.max:
+    settings:
+      parameter: simp_options::uid::max
+      value: 1000000
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:IA-1: true
+    identifiers:
+      nist_800_53:rev4:
+        - IA-1
+  oval:com.puppet.forge.simp.simp_options.uid.min:
+    settings:
+      parameter: simp_options::uid::min
+      value: 1000
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:IA-1: true
+      disa_stig: true
+      RHEL-07-010000: true
+      SRG-OS-000001-GPOS-00001: true
+      cci:CCI-000015: true
+    identifiers:
+      nist_800_53:rev4:
+        - IA-1
+      disa_stig:
+        - RHEL-07-010000
+        - SRG-OS-000001-GPOS-00001
+        - CCI-000015
+  oval:com.puppet.forge.simp.simp_options.gid.max:
+    settings:
+      parameter: simp_options::gid::max
+      value: 500000
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:IA-1: true
+      disa_stig: true
+      RHEL-07-020410: true
+      SRG-OS-000480-GPOS-00227: true
+      cci:CCI-000366: true
+    identifiers:
+      nist_800_53:rev4:
+        - IA-1
+      disa_stig:
+        - RHEL-07-020410
+        - SRG-OS-000480-GPOS-00227
+        - CCI-000366
+  oval:com.puppet.forge.simp.simp_options.gid.min:
+    settings:
+      parameter: simp_options::gid::min
+      value: 1000
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:IA-1: true
+      disa_stig: true
+      RHEL-07-020410: true
+      SRG-OS-000480-GPOS-00227: true
+      cci:CCI-000366: true
+    identifiers:
+      nist_800_53:rev4:
+        - IA-1
+      disa_stig:
+        - RHEL-07-020410
+        - SRG-OS-000480-GPOS-00227
+        - CCI-000366
+  oval:com.puppet.forge.simp.simp_options.openssl.cipher_suite:
+    settings:
+      parameter: simp_options::openssl::cipher_suite
+      value:
+        - FIPS
+    type: puppet-class-parameter
+    controls:
+      disa_stig: true
+      RHEL-07-040030: true
+      SRG-OS-000066-GPOS-00034: true
+      cci:CCI-000185: true
+    identifiers:
+      disa_stig:
+        - RHEL-07-040030
+        - SRG-OS-000066-GPOS-00034
+        - CCI-000185
+  oval:com.puppet.forge.simp.simp_options.stunnel:
+    settings:
+      parameter: simp_options::stunnel
+      value: true
+    type: puppet-class-parameter
+    controls:
+      nist_800_53:rev4: true
+      nist_800_53:rev4:SC-8: true
+      nist_800_53:rev4:SC-8:1: true
+      nist_800_53:rev4:SC-8:2: true
+      nist_800_53:rev4:SC-13: true
+      nist_800_53:rev4:SC-23: true
+    identifiers:
+      nist_800_53:rev4:
+        - SC-8
+        - SC-8:1
+        - SC-8:2
+        - SC-13
+        - SC-23
