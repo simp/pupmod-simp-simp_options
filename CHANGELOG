@@ -2,6 +2,7 @@
 - Add v2 compliance_markup data
 - Drop Puppet 4 support
 - Add Puppet 6 support
+- Add support for puppetlabs-stdlib 6
 
 * Wed May 29 2019 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.2.4-0
 - Clarify the note in `simp_options::dns`
