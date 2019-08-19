@@ -1,7 +1,7 @@
-# simp_options::openssl::params class
-#
-# Sets appropriate openssl cipher suite based on whether
+# @summary Sets appropriate openssl cipher suite based on whether
 # FIPS-mode is desired or the system is already in FIPS mode.
+#
+# @author https://github.com/simp/pupmod-simp-simp_options/graphs/contributors
 #
 class simp_options::openssl::params (
 ) {

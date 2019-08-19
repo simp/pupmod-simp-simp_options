@@ -5,7 +5,6 @@ shared_examples_for  'a simp_options class' do
   it { is_expected.to contain_class('simp_options::dns') }
   it { is_expected.to contain_class('simp_options::ntpd') }
   it { is_expected.to contain_class('simp_options::openssl') }
-  it { is_expected.to contain_class('simp_options::puppet') }
   it { is_expected.to contain_class('simp_options::rsync') }
   it { is_expected.to contain_class('simp_options::uid') }
   it { is_expected.to contain_class('simp_options::gid') }
@@ -21,12 +20,21 @@ describe 'simp_options' do
         context 'default parameters' do
           let(:hieradata) { class_name }
           it_should_behave_like "a simp_options class"
+          it { is_expected.to contain_class('simp_options::puppet') }
+        end
+
+        context 'with puppet disabled' do
+          let(:hieradata) { class_name }
+          let(:params){{ :puppet => false }}
+          it_should_behave_like "a simp_options class"
+          it { is_expected.to_not contain_class('simp_options::puppet') }
         end
 
         context 'with ldap enabled' do
           let(:hieradata) { "#{class_name}_with_ldap" }
           let(:params){{ :ldap => true }}
           it_should_behave_like "a simp_options class"
+          it { is_expected.to contain_class('simp_options::puppet') }
           it { is_expected.to contain_class('simp_options::ldap') }
         end
 

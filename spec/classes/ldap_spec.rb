@@ -27,6 +27,32 @@ describe 'simp_options' do
           }
         end
 
+        context 'simp_options::puppet disabled' do
+          context 'simp_options::ldap::master defined' do
+            let(:hieradata) { 'simp_options_with_ldap_without_puppet_with_master' }
+            it { is_expected.to compile.with_all_deps }
+            it {
+              is_expected.to contain_class('simp_options::ldap').with(
+                :base_dn   => 'DC=example,DC=com',
+                :bind_dn   => 'cn=hostAuth,ou=Hosts,DC=example,DC=com',
+                :bind_pw   => 'N0t=@=R#@l=B1nd=P@ssw0rd',
+                :bind_hash => '{SSHA}DEADBEEFdeadbeefDEADBEEFdeadbeef',
+                :sync_dn   => 'cn=LDAPSync,ou=Hosts,DC=example,DC=com',
+                :sync_pw   => 'N0t=@=R#@l=Sync=P@ssw0rd',
+                :sync_hash => '{SSHA}DeadBeerDeadBeefDeadBeefDeadBeef',
+                :root_dn   => 'cn=LDAPAdmin,ou=People,DC=example,DC=com',
+                :master    => 'ldaps://ldap.example.com',
+                :uri       => ['ldaps://ldap.example.com']
+              )
+            }
+          end
+
+          context 'simp_options::ldap::master undefined' do
+            let(:hieradata) { 'simp_options_with_ldap_without_puppet_missing_master' }
+            it { is_expected.to_not compile.with_all_deps }
+          end
+        end
+
         context 'invalid simp_options::ldap::master' do
           let(:hieradata) { 'simp_options_with_invalid_ldap_master' }
           it { is_expected.not_to compile.with_all_deps }

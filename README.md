@@ -8,13 +8,9 @@
 
 1. [Overview](#overview)
 2. [Module Description - What the module does and why it is useful](#module-description)
-3. [Setup - The basics of getting started with simp_options](#setup)
-    * [What simp_options affects](#what-simp_options-affects)
-    * [Beginning with simp_options](#beginning-with-simp_options)
-4. [Usage - Configuration options and additional functionality](#usage)
-5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
-6. [Limitations - OS compatibility, etc.](#limitations)
-7. [Development - Guide for contributing to the module](#development)
+3. [Beginning with simp_options](#beginning-with-simp_options)
+4. [Limitations - OS compatibility, etc.](#limitations)
+5. [Development - Guide for contributing to the module](#development)
 
 ## Overview
 
@@ -37,40 +33,14 @@ The `simp_options` module primarily provides variables that are
 
 Some of these variables support SIMP's security compliance reporting.
 
-## Setup
+See [REFERENCE.md](REFERENCE.md) for more details.
 
-### What simp_options affects
+## Beginning with simp_options
 
-The variables provided by `simp_options` are used by SIMP modules to
-enable and/or configure capabilities.
-
-### Beginning with simp_options
-
-`simp_options` is configured for you when you run ```simp config``` on your SIMP
-system.  Otherwise, setup is simple:  include the class as the first class in your
-```site.pp``` and select the desired capabilities through Hiera or your ENC.
-
---------------------
-
- **NOTE**
-
- The ```environments/simp/hieradata/simp_defs.yaml``` file delivered with the
- simp puppet module is an example file that can be used to create the
- appropriate hieradata for your site.
-
---------------------
-
-## Usage
-
-TODO - Need to describe the nuances of the global catalysts?
-* More details of what they do than what is in each manifest
-* How they are related/interoperate.
-* Any bad stuff that can happen if you don't enable them.
-
-## Reference
-
-TODO - Anything to put here?  Module is trivial, so further explanation
-doesn't seem warranted.
+`simp_options` is configured for you for a SIMP scenario you select when you
+run ``simp config`` on your SIMP system.  Otherwise, setup is simple:  include
+the class as the first class in your ```site.pp``` and select the desired
+capabilities through Hiera or your ENC.
 
 ## Limitations
 

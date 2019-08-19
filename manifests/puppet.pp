@@ -1,7 +1,4 @@
-#
-# simp_options::puppet class
-#
-# Sets up Puppet configuration variables
+# @summary Sets up Puppet configuration variables
 #
 # @param server The ``Hostname`` or ``FQDN`` of the Puppet server
 #
@@ -11,7 +8,7 @@
 #
 # @param server_distribution The server distribution being used, PC1 or PE.
 #
-# @author SIMP Team - https://simp-project.com
+# @author https://github.com/simp/pupmod-simp-simp_options/graphs/contributors
 #
 class simp_options::puppet (
   Simplib::Host $server,
