@@ -18,17 +18,15 @@
 * [`simp_options::syslog`](#simp_optionssyslog): Sets up syslog configuration variables
 * [`simp_options::uid`](#simp_optionsuid): Sets up system-wide defaults for UID settings
 
+**Functions**
+
+* [`simp_options::host_probably_puppetserver`](#simp_optionshost_probably_puppetserver): Provides a "best guess" method for determining if the current host is a puppet server. Makes all sorts of assumptions and may, or may not, be
+
 ## Classes
 
 ### simp_options
 
 configuration larger than the scope of a single module.
-
-* **See also**
-http://simp.readthedocs.io/en/master/security_mapping/components/simplib/cryptographic_protection/control.html
-SIMP - Security Control Mapping Cryptographic Protection
-http://simp.readthedocs.io/en/master/getting_started_guide/ISO_Build/Environment_Preparation.html?highlight=haveged
-SIMP - Getting Started Environment Preparation
 
 #### Parameters
 
@@ -38,8 +36,8 @@ The following parameters are available in the `simp_options` class.
 
 Data type: `Boolean`
 
-Whether to include SIMP's ``::auditd`` class and add audit rules
-pertinent to each application
+Include SIMP's ``auditd`` class and add audit rules pertinent to each
+application
 
 Default value: `false`
 
@@ -55,15 +53,17 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to enable ``FIPS`` mode for the system.
+Enable ``FIPS`` mode for the system
 
-This parameter enforces strict compliance with ``FIPS-140-2``.
+* NOTE: This parameter enforces strict compliance with ``FIPS-140-2``.
 
-All core SIMP modules can support this configuration. It is important that
-you know the security tradeoffs of ``FIPS-140-2`` compliance.
+* All core SIMP modules can support this configuration. It is important
+  that you know the security tradeoffs of ``FIPS-140-2`` compliance.
 
-``FIPS`` mode disables the use of ``MD5`` and may require weaker ciphers or
-key lengths than your security policies allow.
+* ``FIPS`` mode disables the use of ``MD5`` and may require weaker ciphers
+  or key lengths than your security policies allow.
+
+@see http://simp.readthedocs.io/en/master/security_mapping/components/simplib/cryptographic_protection/control.html SIMP - Security Control Mapping Cryptographic Protection
 
 Default value: `false`
 
@@ -71,8 +71,7 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include SIMP's firewall class ``::iptables``
-and add rules pertinent to each application.
+Include SIMP's firewall management across the SIMP modules.
 
 Default value: `false`
 
@@ -80,8 +79,9 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include the ``::haveged`` class to ensure adequate
-entropy for key generation
+Include the ``haveged`` class to ensure adequate entropy for key generation
+
+@see http://simp.readthedocs.io/en/master/getting_started_guide/ISO_Build/Environment_Preparation.html?highlight=haveged SIMP - Getting Started Environment Preparation
 
 Default value: `false`
 
@@ -89,8 +89,8 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include SIMP's ``ipsec`` class, ``::libreswan``, and
-add rules pertinent to each application.
+Include SIMP's ``ipsec`` class, ``libreswan``, and add rules pertinent to
+each application
 
 Default value: `false`
 
@@ -98,8 +98,8 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include the SIMP's Kerberos class, ``::krb5``, and
-to use ``Kerberos`` in applicable modules
+Include the SIMP's Kerberos class, ``krb5``, and to use ``Kerberos`` in
+applicable modules that support it
 
 Default value: `false`
 
@@ -107,7 +107,7 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether modules should use ``LDAP``.
+Use ``LDAP`` in modules that support it
 
 Default value: `false`
 
@@ -115,8 +115,8 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include SIMP's `::logrotate`` class
-and add rules pertinent to each application.
+Include SIMP's `logrotate`` class and add rules pertinent to each
+application.
 
 Default value: `false`
 
@@ -124,7 +124,7 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include SIMP's ``::pam`` class SIMP to manage ``PAM``
+Include SIMP's ``pam`` class SIMP to manage ``PAM``
 
 Default value: `false`
 
@@ -132,11 +132,12 @@ Default value: `false`
 
 Data type: `Variant[Boolean,Enum['simp']]`
 
-Whether to include SIMP's ``::pki`` class and use ``pki::copy`` to
-distribute PKI certificates to the correct locations.
-If false, don't include SIMP's ``::pki`` class, and don't use ``::pki::copy``.
-If true,  don't include SIMP's ``::pki`` class, but use ``::pki::copy``.
-If 'simp', include SIMP's ``::pki`` class, and use ``::pki::copy``.
+Include SIMP's ``pki`` class and use ``pki::copy`` to distribute PKI
+certificates to the correct locations.
+
+* If false, don't include SIMP's ``pki`` class, and don't use ``pki::copy``.
+* If true,  don't include SIMP's ``pki`` class, but use ``pki::copy``.
+* If 'simp', include SIMP's ``pki`` class, and use ``pki::copy``.
 
 Default value: `false`
 
@@ -144,7 +145,7 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to use ``SSSD``
+Enable ``SSSD`` in modules that support it
 
 Default value: `false`
 
@@ -152,8 +153,8 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include SIMP's ``::stunnel`` class and use it to
-secure server-to-server communications in applicable modules
+Include SIMP's ``stunnel`` class and use it to secure server-to-server
+communications in modules that support it
 
 Default value: `false`
 
@@ -161,8 +162,7 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include SIMP's ``::rsyslog`` class and configure
-RSyslog application hooks
+Include SIMP's ``rsyslog`` class and configure RSyslog application hooks
 
 Default value: `false`
 
@@ -170,9 +170,8 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include SIMP's ``::tcpwrappers`` class and
-use ``tcpwrappers::allow`` to permit the application to the subnets in
-``$::simp_options::trusted_nets``
+Include SIMP's ``tcpwrappers`` class and use ``tcpwrappers::allow`` to
+permit the application to the subnets in ``$simp_options::trusted_nets``
 
 Default value: `false`
 
@@ -180,10 +179,10 @@ Default value: `false`
 
 Data type: `Simplib::Netlist`
 
-Subnets to permit, in ``CIDR`` notation.
+Subnets to permit; in ``CIDR`` notation.
 
-If you need this to be more (or less) restrictive for a given class, you
-can override it for the specific class via that class' parameters.
+* If you need this to be more (or less) restrictive for a given class, you
+  can override it for the specific class via that class' parameters.
 
 Default value: ['127.0.0.1', '::1']
 
@@ -191,10 +190,7 @@ Default value: ['127.0.0.1', '::1']
 
 Data type: `String`
 
-The default ensure parameter for packages.
-
-Can be either 'latest' or 'installed'; currently defaults to 'latest' for
-historical reasons. Default may change in a newer version.
+The default ``ensure`` parameter for packages
 
 Default value: 'latest'
 
@@ -203,8 +199,7 @@ Default value: 'latest'
 Data type: `Boolean`
 
 Feature flag for libkv.
-
-If set to true, it will enable the libkv backend for some functions.
+Enable the libkv backend for some functions
 
 Default value: `false`
 
@@ -212,10 +207,10 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include ``simp_options::puppet`` class SIMP to
-set key Puppet parameters used by SIMP modules
+Include ``simp_options::puppet`` class SIMP to set key Puppet parameters
+used by SIMP modules
 
-Default value: `true`
+Default value: simp_options::host_probably_puppetserver()
 
 ### simp_options::dns
 
@@ -355,7 +350,7 @@ Data type: `Simplib::URI`
 
 The LDAP master in URI form (ldap://server)
 
-Default value: $::simp_options::puppet
+Default value: $simp_options::puppet
 
 ##### `uri`
 
@@ -540,4 +535,22 @@ The highest allowed regular user UID for the system
   internally
 
 Default value: fact('login_defs.uid_max')
+
+## Functions
+
+### simp_options::host_probably_puppetserver
+
+Type: Ruby 4.x API
+
+Provides a "best guess" method for determining if the current host is a
+puppet server. Makes all sorts of assumptions and may, or may not, be what
+you want (but probably is).
+
+#### `simp_options::host_probably_puppetserver()`
+
+Provides a "best guess" method for determining if the current host is a
+puppet server. Makes all sorts of assumptions and may, or may not, be what
+you want (but probably is).
+
+Returns: `Boolean` `true` if the local system appears to be a potential puppetserver
 

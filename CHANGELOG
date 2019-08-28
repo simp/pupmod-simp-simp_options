@@ -1,3 +1,7 @@
+* Wed Aug 28 2019 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.4.0-0
+- Added a simp_options::host_probably_puppetserver class to give us a 'best
+  effort' take at determining if the current host is a puppetserver.
+
 * Mon Aug 19 2019 Liz Nemsick <lnemsick.simp@gmail.com> - 1.4.0-0
 - Added ability to disable inclusion of the ``simp_options::puppet`` class
   by the ``simp_options`` class. This supports the use of Bolt to compile

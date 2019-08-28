@@ -34,10 +34,11 @@ class simp_options::ldap (
   String              $bind_dn    = "cn=hostAuth,ou=Hosts,${base_dn}",
   String              $sync_dn    = "cn=LDAPSync,ou=Hosts,${base_dn}",
   String              $root_dn    = "cn=LDAPAdmin,ou=People,${base_dn}",
-  Simplib::URI        $master     = $::simp_options::puppet ? { true => "ldap://${simp_options::puppet::server}" , default => undef },
+  Simplib::URI        $master     = $simp_options::puppet ? { true => "ldap://${simp_options::puppet::server}" , default => undef },
   Array[Simplib::URI] $uri        = [ $master ]
 ){
   assert_private()
+
   simplib::validate_uri_list($master,['ldap','ldaps'])
   simplib::validate_uri_list($uri,['ldap','ldaps'])
 }

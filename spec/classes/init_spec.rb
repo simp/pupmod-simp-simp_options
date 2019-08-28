@@ -20,19 +20,30 @@ describe 'simp_options' do
         context 'default parameters' do
           let(:hieradata) { class_name }
           it_should_behave_like "a simp_options class"
-          it { is_expected.to contain_class('simp_options::puppet') }
+          it { is_expected.to_not contain_class('simp_options::puppet') }
         end
 
         context 'with puppet disabled' do
           let(:hieradata) { class_name }
-          let(:params){{ :puppet => false }}
+          let(:params){{ :puppet => true }}
           it_should_behave_like "a simp_options class"
-          it { is_expected.to_not contain_class('simp_options::puppet') }
+          it { is_expected.to contain_class('simp_options::puppet') }
+        end
+
+        context 'on a system with the puppetserver installed' do
+          let(:hieradata) { class_name }
+          let(:params){{ :puppet => true }}
+          let(:pre_condition){ 'function simp_options::host_probably_puppetserver { true }' }
+
+          it_should_behave_like "a simp_options class"
+          it { is_expected.to contain_class('simp_options::puppet') }
         end
 
         context 'with ldap enabled' do
           let(:hieradata) { "#{class_name}_with_ldap" }
           let(:params){{ :ldap => true }}
+          let(:pre_condition){ 'function simp_options::host_probably_puppetserver { true }' }
+
           it_should_behave_like "a simp_options class"
           it { is_expected.to contain_class('simp_options::puppet') }
           it { is_expected.to contain_class('simp_options::ldap') }
