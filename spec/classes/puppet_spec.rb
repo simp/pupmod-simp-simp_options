@@ -6,6 +6,7 @@ describe 'simp_options' do
 
       context "on #{os}" do
         let(:facts){ facts }
+        let(:pre_condition){ 'function simp_options::host_probably_puppetserver { true }' }
 
         context 'default parameters for simp_options::puppet' do
           let(:hieradata) { 'simp_options'}

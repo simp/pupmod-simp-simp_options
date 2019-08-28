@@ -1,3 +1,4 @@
 ---
+simp_options::puppet: true
 simp_options::puppet::server : '1.500.2.3'
 simp_options::puppet::ca : 'puppet.example.com'
