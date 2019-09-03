@@ -1,12 +1,9 @@
-#
-# simp_options::pki class
-#
-# Sets up global PKI configuration variables
+# @summary Sets up global PKI configuration variables
 #
 # @param source The source location for PKI certificates.  This is the source
 #   directory for pki::copy.
 #
-# @author SIMP Team - https://simp-project.com
+# @author https://github.com/simp/pupmod-simp-simp_options/graphs/contributors
 #
 class simp_options::pki (
   Stdlib::Absolutepath $source = '/etc/pki/simp/x509'

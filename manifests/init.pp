@@ -1,7 +1,4 @@
-#
-# simp_options class
-#
-# Sets up variables that enable core SIMP capabilities or provide site
+# @summary Sets up variables that enable core SIMP capabilities or provide site
 # configuration larger than the scope of a single module.
 #
 # @param auditd Whether to include SIMP's ``::auditd`` class and add audit rules
@@ -74,7 +71,7 @@
 #
 #   If set to true, it will enable the libkv backend for some functions.
 #
-# @author SIMP Team - https://simp-project.com
+# @author https://github.com/simp/pupmod-simp-simp_options/graphs/contributors
 #
 class simp_options (
   Boolean                       $auditd         = false,

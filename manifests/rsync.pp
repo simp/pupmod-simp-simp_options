@@ -1,7 +1,4 @@
-#
-# simp_options::rsync class
-#
-# Sets up ``rsync`` configuration variables
+# @summary Sets up ``rsync`` configuration variables
 #
 # @param server Server to use for the simp::rsync_server class.
 #
@@ -12,7 +9,7 @@
 #
 # @param timeout rsync connection timeout in **seconds**
 #
-# @author SIMP Team - https://simp-project.com
+# @author https://github.com/simp/pupmod-simp-simp_options/graphs/contributors
 #
 class simp_options::rsync (
   Simplib::Host $server  = '127.0.0.1',

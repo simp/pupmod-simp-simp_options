@@ -1,7 +1,4 @@
-#
-# simp_options::syslog class
-#
-# Sets up ``syslog`` configuration variables
+# @summary Sets up ``syslog`` configuration variables
 #
 # @param log_servers The log servers to receive forwarded logs
 #

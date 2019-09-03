@@ -20,7 +20,7 @@
 #   caching DNS server.
 #   ---------------------------------------------------------------------------
 #
-# @author SIMP Team - https://simp-project.com
+# @author https://github.com/simp/pupmod-simp-simp_options/graphs/contributors
 #
 class simp_options::dns (
   Array[String]        $search  = [],

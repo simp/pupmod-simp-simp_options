@@ -5,26 +5,23 @@
 
 **Classes**
 
-* [`simp_options`](#simp_options): simp_options class  Sets up variables that enable core SIMP capabilities or provide site configuration larger than the scope of a single modu
+* [`simp_options`](#simp_options): Sets up variables that enable core SIMP capabilities or provide site
 * [`simp_options::dns`](#simp_optionsdns): Sets up DNS configuration variables
 * [`simp_options::gid`](#simp_optionsgid): Provides system-wide defaults for GID settings
-* [`simp_options::ldap`](#simp_optionsldap): simp_options::ldap class  Sets up LDAP configuration variables  Some parameters have default values in `simp_options/data/ldap.yaml`, all oth
-* [`simp_options::ntpd`](#simp_optionsntpd): simp_options::ntpd class  Sets up NTP configuration variables
-* [`simp_options::openssl`](#simp_optionsopenssl): simp_options::openssl class  Sets up OpenSSL configuration variables
-* [`simp_options::openssl::params`](#simp_optionsopensslparams): simp_options::openssl::params class  Sets appropriate openssl cipher suite based on whether FIPS-mode is desired or the system is already in 
-* [`simp_options::pki`](#simp_optionspki): simp_options::pki class  Sets up global PKI configuration variables
+* [`simp_options::ldap`](#simp_optionsldap): Sets up LDAP configuration variables
+* [`simp_options::ntpd`](#simp_optionsntpd): Sets up NTP configuration variables
+* [`simp_options::openssl`](#simp_optionsopenssl): Sets up OpenSSL configuration variables
+* [`simp_options::openssl::params`](#simp_optionsopensslparams): Sets appropriate openssl cipher suite based on whether FIPS-mode is
+* [`simp_options::pki`](#simp_optionspki): Sets up global PKI configuration variables
 * [`simp_options::puppet`](#simp_optionspuppet): Sets up Puppet configuration variables
-* [`simp_options::rsync`](#simp_optionsrsync): simp_options::rsync class  Sets up ``rsync`` configuration variables
-* [`simp_options::syslog`](#simp_optionssyslog): simp_options::syslog class  Sets up ``syslog`` configuration variables
+* [`simp_options::rsync`](#simp_optionsrsync): Sets up ``rsync`` configuration variables
+* [`simp_options::syslog`](#simp_optionssyslog): Sets up ``syslog`` configuration variables
 * [`simp_options::uid`](#simp_optionsuid): Provides system-wide defaults for UID settings
 
 ## Classes
 
 ### simp_options
 
-simp_options class
-
-Sets up variables that enable core SIMP capabilities or provide site
 configuration larger than the scope of a single module.
 
 * **See also**
@@ -280,10 +277,6 @@ Default value: fact('login_defs.gid_max')
 
 ### simp_options::ldap
 
-simp_options::ldap class
-
-Sets up LDAP configuration variables
-
 Some parameters have default values in `simp_options/data/ldap.yaml`, all
 others **must** have a value specified via Hiera or your ENC.
 
@@ -365,8 +358,6 @@ Default value: $master
 
 ### simp_options::ntpd
 
-simp_options::ntpd class
-
 Sets up NTP configuration variables
 
 #### Parameters
@@ -378,15 +369,12 @@ The following parameters are available in the `simp_options::ntpd` class.
 Data type: `Array[Simplib::Host]`
 
 The list of NTP time servers for the network.
-
 A consistent time source is critical to your systems' security. **DO NOT**
 run multiple production systems using individual hardware clocks!
 
 Default value: []
 
 ### simp_options::openssl
-
-simp_options::openssl class
 
 Sets up OpenSSL configuration variables
 
@@ -408,14 +396,9 @@ Default value: $::simp_options::openssl::params::cipher_suite
 
 ### simp_options::openssl::params
 
-simp_options::openssl::params class
-
-Sets appropriate openssl cipher suite based on whether
-FIPS-mode is desired or the system is already in FIPS mode.
+desired or the system is already in FIPS mode.
 
 ### simp_options::pki
-
-simp_options::pki class
 
 Sets up global PKI configuration variables
 
@@ -474,8 +457,6 @@ Default value: (
 
 ### simp_options::rsync
 
-simp_options::rsync class
-
 Sets up ``rsync`` configuration variables
 
 #### Parameters
@@ -504,8 +485,6 @@ rsync connection timeout in **seconds**
 Default value: 1
 
 ### simp_options::syslog
-
-simp_options::syslog class
 
 Sets up ``syslog`` configuration variables
 
