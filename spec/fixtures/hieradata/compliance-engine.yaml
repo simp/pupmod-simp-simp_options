@@ -14,18 +14,3 @@ compliance_markup::report_types:
 # do something different based on your test requirements
 compliance_markup::enforcement:
   - "%{facts.target_compliance_profile}"
-
-# Required Parameters
-
-# The following from `simp_options` should not be required
-simp_options::puppet::server: 'puppet.foo.bar'
-simp_options::puppet::ca: 'puppet.foo.bar'
-simp_options::ldap::bind_pw: 'bind_pw'
-simp_options::ldap::bind_hash: '{SSHA}bindhash'
-simp_options::ldap::sync_pw: 'sync_pw'
-simp_options::ldap::sync_hash: '{SSHA}synchash'
-simp_options::dns::servers :
-  - 1.2.3.4
-
-sssd::domains :
-  - 'LOCAL'

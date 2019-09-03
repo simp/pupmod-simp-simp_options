@@ -19,15 +19,22 @@ describe 'simp_options' do
         let(:facts){ os_facts }
 
         context 'default parameters' do
-          let(:hieradata) { class_name }
           it_should_behave_like "a simp_options class"
         end
 
         context 'with ldap enabled' do
-          let(:hieradata) { "#{class_name}_with_ldap" }
-          let(:params){{ :ldap => true }}
-          it_should_behave_like "a simp_options class"
-          it { is_expected.to contain_class('simp_options::ldap') }
+          context 'with the simp_options::puppet settings set' do
+            let(:hieradata) { "#{class_name}_with_ldap" }
+            let(:params){{ :ldap => true }}
+            it_should_behave_like "a simp_options class"
+            it { is_expected.to contain_class('simp_options::ldap') }
+          end
+
+          context 'without the simp_options::puppet settings set' do
+            let(:hieradata) { "#{class_name}_with_ldap_missing_puppet" }
+            let(:params){{ :ldap  => true }}
+            it { expect{is_expected.to compile.with_all_deps}.to raise_error(/parameter .+ expects/) }
+          end
         end
 
         context 'with pki=true' do

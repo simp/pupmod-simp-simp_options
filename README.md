@@ -33,7 +33,7 @@ The `simp_options` module primarily provides variables that are
 * Enablers of capabilities provided or used by SIMP modules.
 * Data that describes the configuration of a site.
   * The scope of the data is larger than the scope of a single module.
-  * 0..n unrelated profiles might make use of this data.
+  * `0..n` unrelated profiles might make use of this data.
 
 Some of these variables support SIMP's security compliance reporting.
 
@@ -60,17 +60,9 @@ system.  Otherwise, setup is simple:  include the class as the first class in yo
 
 --------------------
 
-## Usage
-
-TODO - Need to describe the nuances of the global catalysts?
-* More details of what they do than what is in each manifest
-* How they are related/interoperate.
-* Any bad stuff that can happen if you don't enable them.
-
 ## Reference
 
-TODO - Anything to put here?  Module is trivial, so further explanation
-doesn't seem warranted.
+See [REFERENCE.md](./REFERENCE.md)
 
 ## Limitations
 
