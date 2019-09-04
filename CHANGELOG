@@ -1,3 +1,15 @@
+* Tue Sep 03 2019 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.4.0-0
+- The following are now optional:
+  - simp_options::puppet::server
+  - simp_options::puppet::ca
+- These are no longer required at all times due to support for Bolt. Code that
+  used these parameters will correctly fail and require users to add them to
+  their configuration.
+- Updated simp_options::ldap to require the 'master' and 'uri' parameters if
+  simp_options::puppet::server is not defined.
+- Fixed PE detection in simp_options::puppet::server_distribution
+- Add support for simplib < 5
+
 * Thu Jun 06 2019 Steven Pritchard <steven.pritchard@onypoint.com> - 1.3.0-0
 - Add v2 compliance_markup data
 - Drop Puppet 4 support

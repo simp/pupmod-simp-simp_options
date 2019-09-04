@@ -1,7 +1,4 @@
-#
-# simp_options::puppet class
-#
-# Sets up Puppet configuration variables
+# @summary Sets up Puppet configuration variables
 #
 # @param server The ``Hostname`` or ``FQDN`` of the Puppet server
 #
@@ -11,15 +8,16 @@
 #
 # @param server_distribution The server distribution being used, PC1 or PE.
 #
-# @author SIMP Team - https://simp-project.com
+# @author https://github.com/simp/pupmod-simp-simp_options/graphs/contributors
 #
 class simp_options::puppet (
-  Simplib::Host $server,
-  Simplib::Host $ca,
-  Simplib::Serverdistribution $server_distribution = $facts['is_pe'] ? { true => 'PE', default => 'PC1' },
-  Simplib::Port $ca_port = $server_distribution ? { 'PE' => 8140, default => 8141 }
+  Optional[Simplib::Host]     $server              = undef,
+  Optional[Simplib::Host]     $ca                  = undef,
+  Simplib::Serverdistribution $server_distribution = (('pe_build' in  $facts) or $facts['is_pe']) ? { true => 'PE', default => 'PC1' },
+  Simplib::Port               $ca_port             = $server_distribution ? { 'PE' => $facts['puppet_settings']['agent']['ca_port'], default => 8141 }
 ){
   assert_private()
-  simplib::validate_net_list($server)
-  simplib::validate_net_list($ca)
+
+  if $server { simplib::validate_net_list($server) }
+  if $ca { simplib::validate_net_list($ca) }
 }

@@ -1,7 +1,4 @@
-#
-# simp_options class
-#
-# Sets up variables that enable core SIMP capabilities or provide site
+# @summary Sets up variables that enable core SIMP capabilities or provide site
 # configuration larger than the scope of a single module.
 #
 # @param auditd Whether to include SIMP's ``::auditd`` class and add audit rules
@@ -74,7 +71,7 @@
 #
 #   If set to true, it will enable the libkv backend for some functions.
 #
-# @author SIMP Team - https://simp-project.com
+# @author https://github.com/simp/pupmod-simp-simp_options/graphs/contributors
 #
 class simp_options (
   Boolean                       $auditd         = false,
@@ -94,14 +91,14 @@ class simp_options (
   Boolean                       $tcpwrappers    = false,
   Simplib::Netlist              $trusted_nets   = ['127.0.0.1', '::1'],
   String                        $package_ensure = 'latest',
-  Boolean                       $libkv          = false,
+  Boolean                       $libkv          = false
 ){
   simplib::validate_net_list($trusted_nets)
 
+  include 'simp_options::puppet'
   include 'simp_options::dns'
   include 'simp_options::ntpd'
   include 'simp_options::openssl'
-  include 'simp_options::puppet'
   include 'simp_options::rsync'
   include 'simp_options::uid'
   include 'simp_options::gid'

@@ -1,7 +1,4 @@
-#
-# simp_options::ldap class
-#
-# Sets up LDAP configuration variables
+# @summary Sets up LDAP configuration variables
 #
 # Some parameters have default values in `simp_options/data/ldap.yaml`, all
 # others **must** have a value specified via Hiera or your ENC.
@@ -26,21 +23,22 @@
 #
 # @param uri The list of OpenLDAP servers in URI form (ldap://server)
 #
-# @author SIMP Team - https://simp-project.com
+# @author https://github.com/simp/pupmod-simp-simp_options/graphs/contributors
 #
 class simp_options::ldap (
   String              $bind_pw,
   String              $bind_hash,
   String              $sync_pw,
   String              $sync_hash,
+  Simplib::URI        $master     = $simp_options::puppet::server ? { undef => undef, default => "ldap://${simp_options::puppet::server}"},
+  Array[Simplib::URI] $uri        = $master ? { undef => undef, default => [$master]},
   String              $base_dn    = simplib::ldap::domain_to_dn(),
   String              $bind_dn    = "cn=hostAuth,ou=Hosts,${base_dn}",
   String              $sync_dn    = "cn=LDAPSync,ou=Hosts,${base_dn}",
   String              $root_dn    = "cn=LDAPAdmin,ou=People,${base_dn}",
-  Simplib::URI        $master     = "ldap://${simp_options::puppet::server}",
-  Array[Simplib::URI] $uri        = ["ldap://${simp_options::puppet::server}"]
 ){
   assert_private()
-  simplib::validate_uri_list($master,['ldap','ldaps'])
-  simplib::validate_uri_list($uri,['ldap','ldaps'])
+
+  simplib::validate_uri_list($master, ['ldap','ldaps'])
+  simplib::validate_uri_list($uri, ['ldap','ldaps'])
 }
