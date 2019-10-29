@@ -1,3 +1,7 @@
+* Tue Oct 29 2019 Jeanne Greulich <jeannegreulich@onyxpoint.com> - 1.4.0-0
+- Remove the clamav catalyst because clamav is not longer included
+  in the class list of the  simp scenarios.
+
 * Tue Sep 03 2019 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.4.0-0
 - The following are now optional:
   - simp_options::puppet::server

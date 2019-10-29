@@ -4,8 +4,6 @@
 # @param auditd Whether to include SIMP's ``::auditd`` class and add audit rules
 #   pertinent to each application
 #
-# @param clamav Whether SIMP should manage ``ClamAV``
-#
 # @param fips Whether to enable ``FIPS`` mode for the system.
 #
 #  This parameter enforces strict compliance with ``FIPS-140-2``.
@@ -75,7 +73,6 @@
 #
 class simp_options (
   Boolean                       $auditd         = false,
-  Boolean                       $clamav         = false,
   Boolean                       $fips           = false,
   Boolean                       $firewall       = false,
   Boolean                       $haveged        = false,
