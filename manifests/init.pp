@@ -4,6 +4,11 @@
 # @param auditd Whether to include SIMP's ``::auditd`` class and add audit rules
 #   pertinent to each application
 #
+# @param clamav  (deprecated) Whether SIMP should manage ``ClamAV``
+#    This parameter is deprecated and will be removed in later
+#    releases.  ``clamav`` is no longer in the default list of classes in any
+#    simp scenario.
+#
 # @param fips Whether to enable ``FIPS`` mode for the system.
 #
 #  This parameter enforces strict compliance with ``FIPS-140-2``.
@@ -73,6 +78,7 @@
 #
 class simp_options (
   Boolean                       $auditd         = false,
+  Boolean                       $clamav         = false,
   Boolean                       $fips           = false,
   Boolean                       $firewall       = false,
   Boolean                       $haveged        = false,
