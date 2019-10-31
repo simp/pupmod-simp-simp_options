@@ -47,7 +47,10 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether SIMP should manage ``ClamAV``
+Deprecated. Whether SIMP should manage ``ClamAV``
+This parameter is deprecated and will be removed in later
+releases.  ``clamav`` is no longer in the default list of classes in any
+simp scenario.
 
 Default value: `false`
 

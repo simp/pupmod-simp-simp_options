@@ -4,7 +4,7 @@
 # @param auditd Whether to include SIMP's ``::auditd`` class and add audit rules
 #   pertinent to each application
 #
-# @param clamav  (deprecated) Whether SIMP should manage ``ClamAV``
+# @param clamav  Deprecated. Whether SIMP should manage ``ClamAV``
 #    This parameter is deprecated and will be removed in later
 #    releases.  ``clamav`` is no longer in the default list of classes in any
 #    simp scenario and the catalyst is not needed.  You now need to include clamav
