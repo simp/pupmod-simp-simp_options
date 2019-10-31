@@ -7,7 +7,9 @@
 # @param clamav  (deprecated) Whether SIMP should manage ``ClamAV``
 #    This parameter is deprecated and will be removed in later
 #    releases.  ``clamav`` is no longer in the default list of classes in any
-#    simp scenario.
+#    simp scenario and the catalyst is not needed.  You now need to include clamav
+#    in your class list to manage it. See pupmod-simp-clamav  README for information on configuring
+#    clamav.
 #
 # @param fips Whether to enable ``FIPS`` mode for the system.
 #
