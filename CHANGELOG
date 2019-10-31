@@ -1,7 +1,10 @@
 * Tue Oct 29 2019 Jeanne Greulich <jeannegreulich@onyxpoint.com> - 1.4.0-0
-- Mark the clamav catalyst as deprecated. As of SIMP 6.5 clamav is no
+- This change marks the clamav catalyst as deprecated. As of SIMP 6.5 clamav is no
   longer included in the class list of the simp scenarios so this
   catalyst is not needed to disable it.
+  To have simp manage ``ClamAV`` on your systems the ``clamav`` class must
+  be added to your systems class list.
+  See the simp ``clamav`` module README for information on managing ``ClamAV``.
 
 * Tue Sep 03 2019 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.4.0-0
 - The following are now optional:
