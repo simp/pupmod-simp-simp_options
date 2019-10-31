@@ -48,11 +48,12 @@ Default value: `false`
 Data type: `Boolean`
 
 Deprecated. Whether SIMP should manage ``ClamAV``
-This parameter is deprecated and will be removed in later
-releases.  The ``clamav`` class is no longer included by default on simp systems.
-To have simp manage ``ClamAV`` on your systems the ``clamav`` class must
-be added to your systems class list.
-See the simp ``clamav`` module README for information on managing ``ClamAV``.
+This parameter is deprecated and will be removed in later releases.
+SIMP's ``clamav`` class is no longer included by default on SIMP systems.
+To have SIMP manage ``ClamAV`` on your system include the ``clamav`` class
+to your system's class list.
+
+See SIMP's ``clamav`` module README for information on managing ``ClamAV``.
 
 Default value: `false`
 
