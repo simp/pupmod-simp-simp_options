@@ -59,7 +59,7 @@ you know the security tradeoffs of ``FIPS-140-2`` compliance.
 ``FIPS`` mode disables the use of ``MD5`` and may require weaker ciphers or
 key lengths than your security policies allow.
 
-@see http://simp.readthedocs.io/en/master/security_mapping/components/simplib/cryptographic_protection/control.html SIMP - Security Control Mapping Cryptographic Protection
+@see http://simp.readthedocs.io/en/stable/security_mapping/components/simp/cryptographic_protection/control.html SIMP - Security Control Mapping Cryptographic Protection
 
 Default value: `false`
 
@@ -82,7 +82,7 @@ Data type: `Boolean`
 Include the ``haveged`` class to ensure adequate entropy for key
 generation
 
-@see http://simp.readthedocs.io/en/master/getting_started_guide/ISO_Build/Environment_Preparation.html?highlight=haveged SIMP - Getting Started Environment Preparation
+@see http://simp.readthedocs.io/en/stable/getting_started_guide/Installation_Options/ISO/ISO_Build/Environment_Preparation.html?highlight=haveged SIMP - Getting Started Environment Preparation
 
 Default value: `false`
 
