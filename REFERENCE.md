@@ -243,6 +243,7 @@ different DNS server for primary DNS resolution, then you MUST set
 This will get around the convenience logic that was put in place to handle
 the caching entries and will not attempt to convert your system to a
 caching DNS server.
+
 ---------------------------------------------------------------------------
 
 Default value: []

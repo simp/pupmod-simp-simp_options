@@ -18,6 +18,7 @@
 #   This will get around the convenience logic that was put in place to handle
 #   the caching entries and will not attempt to convert your system to a
 #   caching DNS server.
+#
 #   ---------------------------------------------------------------------------
 #
 # @author https://github.com/simp/pupmod-simp-simp_options/graphs/contributors
