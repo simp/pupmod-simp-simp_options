@@ -27,6 +27,8 @@ a compliance-management framework built on Puppet.
 
 Most SIMP modules actively take advantage of this module when used within the SIMP ecosystem.
 
+**THIS MODULE IS ONLY DATA AND WILL NOT CHANGE YOUR SYSTEM**
+
 ## Module Description
 
 The `simp_options` module primarily provides variables that are
@@ -46,15 +48,15 @@ enable and/or configure capabilities.
 
 ### Beginning with simp_options
 
-`simp_options` is configured for you when you run ```simp config``` on your SIMP
+`simp_options` is configured for you when you run ``simp config`` on your SIMP
 system.  Otherwise, setup is simple:  include the class as the first class in your
-```site.pp``` and select the desired capabilities through Hiera or your ENC.
+``site.pp`` and select the desired capabilities through Hiera or your ENC.
 
 --------------------
 
  **NOTE**
 
- The ```environments/simp/hieradata/simp_defs.yaml``` file delivered with the
+ The ``environments/simp/hieradata/simp_defs.yaml`` file delivered with the
  simp puppet module is an example file that can be used to create the
  appropriate hieradata for your site.
 
