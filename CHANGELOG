@@ -1,3 +1,7 @@
+* Mon Dec 09 2019 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.4.0-0
+- Added support for `firewalld` in the `simp_options::firewall` parameter
+- Reformatted some documentation
+
 * Tue Oct 29 2019 Jeanne Greulich <jeannegreulich@onyxpoint.com> - 1.4.0-0
 - This change marks the clamav catalyst as deprecated.
   * As of SIMP 6.5, SIMP's ``clamav`` class is no longer included in the class

@@ -5,7 +5,7 @@
 
 **Classes**
 
-* [`simp_options`](#simp_options): Sets up variables that enable core SIMP capabilities or provide site
+* [`simp_options`](#simp_options): Sets up variables that enable core SIMP capabilities or provide site configuration larger than the scope of a single module
 * [`simp_options::dns`](#simp_optionsdns): Sets up DNS configuration variables
 * [`simp_options::gid`](#simp_optionsgid): Provides system-wide defaults for GID settings
 * [`simp_options::ldap`](#simp_optionsldap): Sets up LDAP configuration variables
@@ -22,13 +22,7 @@
 
 ### simp_options
 
-configuration larger than the scope of a single module.
-
-* **See also**
-http://simp.readthedocs.io/en/master/security_mapping/components/simplib/cryptographic_protection/control.html
-SIMP - Security Control Mapping Cryptographic Protection
-http://simp.readthedocs.io/en/master/getting_started_guide/ISO_Build/Environment_Preparation.html?highlight=haveged
-SIMP - Getting Started Environment Preparation
+Sets up variables that enable core SIMP capabilities or provide site configuration larger than the scope of a single module
 
 #### Parameters
 
@@ -38,8 +32,8 @@ The following parameters are available in the `simp_options` class.
 
 Data type: `Boolean`
 
-Whether to include SIMP's ``::auditd`` class and add audit rules
-pertinent to each application
+Include SIMP's ``auditd`` class and add audit rules pertinent to each
+application
 
 Default value: `false`
 
@@ -47,13 +41,7 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Deprecated. Whether SIMP should manage ``ClamAV``
-This parameter is deprecated and will be removed in later releases.
-SIMP's ``clamav`` class is no longer included by default on SIMP systems.
-To have SIMP manage ``ClamAV`` on your system include the ``clamav`` class
-to your system's class list.
-
-See SIMP's ``clamav`` module README for information on managing ``ClamAV``.
+Deprecated - DO NOT USE
 
 Default value: `false`
 
@@ -61,7 +49,7 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to enable ``FIPS`` mode for the system.
+Enable ``FIPS`` mode for the system
 
 This parameter enforces strict compliance with ``FIPS-140-2``.
 
@@ -71,14 +59,19 @@ you know the security tradeoffs of ``FIPS-140-2`` compliance.
 ``FIPS`` mode disables the use of ``MD5`` and may require weaker ciphers or
 key lengths than your security policies allow.
 
+@see http://simp.readthedocs.io/en/stable/security_mapping/components/simp/cryptographic_protection/control.html SIMP - Security Control Mapping Cryptographic Protection
+
 Default value: `false`
 
 ##### `firewall`
 
-Data type: `Boolean`
+Data type: `Variant[Boolean,Enum['firewalld']]`
 
-Whether to include SIMP's firewall class ``::iptables``
-and add rules pertinent to each application.
+Include SIMP's firewall class ``iptables`` and add rules pertinent to each
+application
+
+* Set to ``firewalld`` if you want to automatically pass through to the SIMP
+  configuraton of ``firewalld``.
 
 Default value: `false`
 
@@ -86,8 +79,10 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include the ``::haveged`` class to ensure adequate
-entropy for key generation
+Include the ``haveged`` class to ensure adequate entropy for key
+generation
+
+@see http://simp.readthedocs.io/en/stable/getting_started_guide/Installation_Options/ISO/ISO_Build/Environment_Preparation.html?highlight=haveged SIMP - Getting Started Environment Preparation
 
 Default value: `false`
 
@@ -95,8 +90,8 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include SIMP's ``ipsec`` class, ``::libreswan``, and
-add rules pertinent to each application.
+Include SIMP's ``ipsec`` class, ``libreswan``, and add rules pertinent to
+each application
 
 Default value: `false`
 
@@ -104,8 +99,8 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include the SIMP's Kerberos class, ``::krb5``, and
-to use ``Kerberos`` in applicable modules
+Include the SIMP's Kerberos class, ``krb5``, and to use ``Kerberos`` in
+applicable modules
 
 Default value: `false`
 
@@ -113,7 +108,7 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether modules should use ``LDAP``.
+Encourage modules to use ``LDAP`` support where possible
 
 Default value: `false`
 
@@ -121,8 +116,8 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include SIMP's `::logrotate`` class
-and add rules pertinent to each application.
+Include SIMP's ``logrotate`` class and add rules pertinent to each
+application
 
 Default value: `false`
 
@@ -130,7 +125,7 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include SIMP's ``::pam`` class SIMP to manage ``PAM``
+Include SIMP's ``pam`` class SIMP to manage ``PAM``
 
 Default value: `false`
 
@@ -138,11 +133,13 @@ Default value: `false`
 
 Data type: `Variant[Boolean,Enum['simp']]`
 
-Whether to include SIMP's ``::pki`` class and use ``pki::copy`` to
-distribute PKI certificates to the correct locations.
-If false, don't include SIMP's ``::pki`` class, and don't use ``::pki::copy``.
-If true,  don't include SIMP's ``::pki`` class, but use ``::pki::copy``.
-If 'simp', include SIMP's ``::pki`` class, and use ``::pki::copy``.
+Include SIMP's ``pki`` class and use ``pki::copy`` to distribute PKI
+certificates to the correct locations
+
+* If ``false``, don't include SIMP's ``pki`` class, and don't use
+  ``pki::copy``
+* If ``true``,  don't include SIMP's ``pki`` class, but do use ``pki::copy``
+* If ``simp``, include SIMP's ``pki`` class, and use ``pki::copy``
 
 Default value: `false`
 
@@ -150,7 +147,7 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to use ``SSSD``
+Enable ``SSSD`` support where possible
 
 Default value: `false`
 
@@ -158,8 +155,8 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include SIMP's ``::stunnel`` class and use it to
-secure server-to-server communications in applicable modules
+Include SIMP's ``stunnel`` class and use it to secure server-to-server
+communications in applicable modules
 
 Default value: `false`
 
@@ -167,8 +164,7 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include SIMP's ``::rsyslog`` class and configure
-RSyslog application hooks
+Include SIMP's ``rsyslog`` class and configure RSyslog application hooks
 
 Default value: `false`
 
@@ -176,9 +172,9 @@ Default value: `false`
 
 Data type: `Boolean`
 
-Whether to include SIMP's ``::tcpwrappers`` class and
-use ``tcpwrappers::allow`` to permit the application to the subnets in
-``$::simp_options::trusted_nets``
+Whether to include SIMP's ``tcpwrappers`` class and use
+``tcpwrappers::allow`` to permit the application to the subnets in
+``$simp_options::trusted_nets``
 
 Default value: `false`
 
@@ -186,10 +182,10 @@ Default value: `false`
 
 Data type: `Simplib::Netlist`
 
-Subnets to permit, in ``CIDR`` notation.
+Subnets to permit, in ``CIDR`` notation
 
-If you need this to be more (or less) restrictive for a given class, you
-can override it for the specific class via that class' parameters.
+* If you need this to be more (or less) restrictive for a given class, you
+  can override it for the specific class via that class' parameters.
 
 Default value: ['127.0.0.1', '::1']
 
@@ -197,10 +193,9 @@ Default value: ['127.0.0.1', '::1']
 
 Data type: `String`
 
-The default ensure parameter for packages.
+The default ensure parameter for packages
 
-Can be either 'latest' or 'installed'; currently defaults to 'latest' for
-historical reasons. Default may change in a newer version.
+* Can be either ``latest`` or ``installed``
 
 Default value: 'latest'
 
@@ -208,9 +203,7 @@ Default value: 'latest'
 
 Data type: `Boolean`
 
-Feature flag for libkv.
-
-If set to true, it will enable the libkv backend for some functions.
+Enable the libkv backend for some functions
 
 Default value: `false`
 
@@ -250,6 +243,7 @@ different DNS server for primary DNS resolution, then you MUST set
 This will get around the convenience logic that was put in place to handle
 the caching entries and will not attempt to convert your system to a
 caching DNS server.
+
 ---------------------------------------------------------------------------
 
 Default value: []
