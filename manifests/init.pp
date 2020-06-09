@@ -21,11 +21,7 @@
 #   @see http://simp.readthedocs.io/en/stable/security_mapping/components/simp/cryptographic_protection/control.html SIMP - Security Control Mapping Cryptographic Protection
 #
 # @param firewall
-#   Include SIMP's firewall class ``iptables`` and add rules pertinent to each
-#   application
-#
-#   * Set to ``firewalld`` if you want to automatically pass through to the SIMP
-#     configuraton of ``firewalld``.
+#   Indicate that you want to load the native SIMP firewall management subsystem
 #
 # @param haveged
 #   Include the ``haveged`` class to ensure adequate entropy for key
@@ -92,24 +88,24 @@
 # @author https://github.com/simp/pupmod-simp-simp_options/graphs/contributors
 #
 class simp_options (
-  Boolean                            $auditd         = false,
-  Boolean                            $clamav         = false,
-  Boolean                            $fips           = false,
-  Variant[Boolean,Enum['firewalld']] $firewall       = false,
-  Boolean                            $haveged        = false,
-  Boolean                            $ipsec          = false,
-  Boolean                            $kerberos       = false,
-  Boolean                            $ldap           = false,
-  Boolean                            $logrotate      = false,
-  Boolean                            $pam            = false,
-  Variant[Boolean,Enum['simp']]      $pki            = false,
-  Boolean                            $sssd           = false,
-  Boolean                            $stunnel        = false,
-  Boolean                            $syslog         = false,
-  Boolean                            $tcpwrappers    = false,
-  Simplib::Netlist                   $trusted_nets   = ['127.0.0.1', '::1'],
-  String                             $package_ensure = 'latest',
-  Boolean                            $libkv          = false
+  Boolean                       $auditd         = false,
+  Boolean                       $clamav         = false,
+  Boolean                       $fips           = false,
+  Boolean                       $firewall       = false,
+  Boolean                       $haveged        = false,
+  Boolean                       $ipsec          = false,
+  Boolean                       $kerberos       = false,
+  Boolean                       $ldap           = false,
+  Boolean                       $logrotate      = false,
+  Boolean                       $pam            = false,
+  Variant[Boolean,Enum['simp']] $pki            = false,
+  Boolean                       $sssd           = false,
+  Boolean                       $stunnel        = false,
+  Boolean                       $syslog         = false,
+  Boolean                       $tcpwrappers    = false,
+  Simplib::Netlist              $trusted_nets   = ['127.0.0.1', '::1'],
+  String                        $package_ensure = 'latest',
+  Boolean                       $libkv          = false
 ){
   simplib::validate_net_list($trusted_nets)
 
