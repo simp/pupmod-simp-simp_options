@@ -65,13 +65,9 @@ Default value: `false`
 
 ##### `firewall`
 
-Data type: `Variant[Boolean,Enum['firewalld']]`
+Data type: `Boolean`
 
-Include SIMP's firewall class ``iptables`` and add rules pertinent to each
-application
-
-* Set to ``firewalld`` if you want to automatically pass through to the SIMP
-  configuraton of ``firewalld``.
+Indicate that you want to load the native SIMP firewall management subsystem
 
 Default value: `false`
 
