@@ -1,3 +1,6 @@
+* Wed Sep 16 2020 Liz Nemsick <lnemsick.simp@gmail.com> - 1.4.1-0
+- Advertise OEL8 support in the metadata.json.
+
 * Tue Oct 29 2019 Jeanne Greulich <jeannegreulich@onyxpoint.com> - 1.4.0-0
 - This change marks the clamav catalyst as deprecated.
   * As of SIMP 6.5, SIMP's ``clamav`` class is no longer included in the class
