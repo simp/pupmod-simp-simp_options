@@ -1,6 +1,8 @@
 # @summary Sets up NTP configuration variables
 #
-# @param servers The list of NTP time servers for the network.
+# @param servers
+#   **DEPRECATED** Use simp_options::ntp instead.
+#   The list of NTP time servers for the network.
 #   A consistent time source is critical to your systems' security. **DO NOT**
 #   run multiple production systems using individual hardware clocks!
 #

@@ -111,6 +111,7 @@ class simp_options (
 
   include 'simp_options::puppet'
   include 'simp_options::dns'
+  include 'simp_options::ntp'
   include 'simp_options::ntpd'
   include 'simp_options::openssl'
   include 'simp_options::rsync'

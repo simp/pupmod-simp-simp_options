@@ -1,0 +1,9 @@
+---
+simp_options::ntp::servers:
+  ntp1.example.com:
+    - "minpoll 3"
+    - "maxpoll 6"
+  ntp2.example.com:
+    - "iburst"
+    - "minpoll 4"
+    - "maxpoll 8"
