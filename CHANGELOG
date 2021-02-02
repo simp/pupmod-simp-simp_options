@@ -1,4 +1,8 @@
-* Sat Dec 19 2020 Chris Tessmer <chris.tessmer@onyxpoint.com> - 1.4.2
+* Tue Feb 02 2021 Liz Nemsick <lnemsick.simp@gmail.com> - 1.5.0
+- Added simp_options::ntp for more generalized configuration of ntpd and chronyd
+- Deprecated simp_options::ntpd
+
+* Sat Dec 19 2020 Chris Tessmer <chris.tessmer@onyxpoint.com> - 1.5.0
 - Removed EL6 support
 
 * Wed Sep 16 2020 Liz Nemsick <lnemsick.simp@gmail.com> - 1.4.1-0
