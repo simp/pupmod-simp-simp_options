@@ -47,6 +47,10 @@
 # @param pam
 #   Include SIMP's ``pam`` class SIMP to manage ``PAM``
 #
+# @param authselect
+#   The dconf, pam, and nsswitch modules will be configured to work with
+#   a system leveraging authselect
+#
 # @param pki
 #   Include SIMP's ``pki`` class and use ``pki::copy`` to distribute PKI
 #   certificates to the correct locations
@@ -89,6 +93,7 @@
 #
 class simp_options (
   Boolean                       $auditd         = false,
+  Boolean                       $authselect     = false,
   Boolean                       $clamav         = false,
   Boolean                       $fips           = false,
   Boolean                       $firewall       = false,
