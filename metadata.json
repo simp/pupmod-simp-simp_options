@@ -1,6 +1,6 @@
 {
   "name": "simp-simp_options",
-  "version": "1.6.1",
+  "version": "1.7.0",
   "author": "SIMP Team",
   "summary": "Variables enabling SIMP core capabilities",
   "license": "Apache-2.0",
@@ -13,7 +13,7 @@
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
-      "version_requirement": ">= 6.6.0 < 8.0.0"
+      "version_requirement": ">= 8.0.0 < 9.0.0"
     },
     {
       "name": "simp/simplib",
@@ -40,6 +40,12 @@
       "operatingsystemrelease": [
         "8",
         "7"
+      ]
+    },
+    {
+      "operatingsystem": "Rocky",
+      "operatingsystemrelease": [
+        "8"
       ]
     }
   ],
