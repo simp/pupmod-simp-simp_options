@@ -7,18 +7,18 @@
 ### Classes
 
 * [`simp_options`](#simp_options): Sets up variables that enable core SIMP capabilities or provide site configuration larger than the scope of a single module
-* [`simp_options::dns`](#simp_optionsdns): Sets up DNS configuration variables
-* [`simp_options::gid`](#simp_optionsgid): Provides system-wide defaults for GID settings
-* [`simp_options::ldap`](#simp_optionsldap): Sets up LDAP configuration variables
-* [`simp_options::ntp`](#simp_optionsntp): Sets up NTP configuration variables
-* [`simp_options::ntpd`](#simp_optionsntpd): Sets up NTP configuration variables
-* [`simp_options::openssl`](#simp_optionsopenssl): Sets up OpenSSL configuration variables
-* [`simp_options::openssl::params`](#simp_optionsopensslparams): Sets appropriate openssl cipher suite based on whether FIPS-mode is
-* [`simp_options::pki`](#simp_optionspki): Sets up global PKI configuration variables
-* [`simp_options::puppet`](#simp_optionspuppet): Sets up Puppet configuration variables
-* [`simp_options::rsync`](#simp_optionsrsync): Sets up ``rsync`` configuration variables
-* [`simp_options::syslog`](#simp_optionssyslog): Sets up ``syslog`` configuration variables
-* [`simp_options::uid`](#simp_optionsuid): Provides system-wide defaults for UID settings
+* [`simp_options::dns`](#simp_options--dns): Sets up DNS configuration variables
+* [`simp_options::gid`](#simp_options--gid): Provides system-wide defaults for GID settings
+* [`simp_options::ldap`](#simp_options--ldap): Sets up LDAP configuration variables
+* [`simp_options::ntp`](#simp_options--ntp): Sets up NTP configuration variables
+* [`simp_options::ntpd`](#simp_options--ntpd): Sets up NTP configuration variables
+* [`simp_options::openssl`](#simp_options--openssl): Sets up OpenSSL configuration variables
+* [`simp_options::openssl::params`](#simp_options--openssl--params): Sets appropriate openssl cipher suite based on whether FIPS-mode is
+* [`simp_options::pki`](#simp_options--pki): Sets up global PKI configuration variables
+* [`simp_options::puppet`](#simp_options--puppet): Sets up Puppet configuration variables
+* [`simp_options::rsync`](#simp_options--rsync): Sets up ``rsync`` configuration variables
+* [`simp_options::syslog`](#simp_options--syslog): Sets up ``syslog`` configuration variables
+* [`simp_options::uid`](#simp_options--uid): Provides system-wide defaults for UID settings
 
 ## Classes
 
@@ -30,43 +30,44 @@ Sets up variables that enable core SIMP capabilities or provide site configurati
 
 The following parameters are available in the `simp_options` class:
 
-* [`auditd`](#auditd)
-* [`clamav`](#clamav)
-* [`fips`](#fips)
-* [`firewall`](#firewall)
-* [`haveged`](#haveged)
-* [`ipsec`](#ipsec)
-* [`kerberos`](#kerberos)
-* [`ldap`](#ldap)
-* [`logrotate`](#logrotate)
-* [`pam`](#pam)
-* [`pki`](#pki)
-* [`sssd`](#sssd)
-* [`stunnel`](#stunnel)
-* [`syslog`](#syslog)
-* [`tcpwrappers`](#tcpwrappers)
-* [`trusted_nets`](#trusted_nets)
-* [`package_ensure`](#package_ensure)
-* [`libkv`](#libkv)
+* [`auditd`](#-simp_options--auditd)
+* [`clamav`](#-simp_options--clamav)
+* [`fips`](#-simp_options--fips)
+* [`firewall`](#-simp_options--firewall)
+* [`haveged`](#-simp_options--haveged)
+* [`ipsec`](#-simp_options--ipsec)
+* [`kerberos`](#-simp_options--kerberos)
+* [`ldap`](#-simp_options--ldap)
+* [`logrotate`](#-simp_options--logrotate)
+* [`pam`](#-simp_options--pam)
+* [`authselect`](#-simp_options--authselect)
+* [`pki`](#-simp_options--pki)
+* [`sssd`](#-simp_options--sssd)
+* [`stunnel`](#-simp_options--stunnel)
+* [`syslog`](#-simp_options--syslog)
+* [`tcpwrappers`](#-simp_options--tcpwrappers)
+* [`trusted_nets`](#-simp_options--trusted_nets)
+* [`package_ensure`](#-simp_options--package_ensure)
+* [`libkv`](#-simp_options--libkv)
 
-##### <a name="auditd"></a>`auditd`
+##### <a name="-simp_options--auditd"></a>`auditd`
 
 Data type: `Boolean`
 
 Include SIMP's ``auditd`` class and add audit rules pertinent to each
 application
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="clamav"></a>`clamav`
+##### <a name="-simp_options--clamav"></a>`clamav`
 
 Data type: `Boolean`
 
 Deprecated - DO NOT USE
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="fips"></a>`fips`
+##### <a name="-simp_options--fips"></a>`fips`
 
 Data type: `Boolean`
 
@@ -82,17 +83,17 @@ key lengths than your security policies allow.
 
 @see http://simp.readthedocs.io/en/stable/security_mapping/components/simp/cryptographic_protection/control.html SIMP - Security Control Mapping Cryptographic Protection
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="firewall"></a>`firewall`
+##### <a name="-simp_options--firewall"></a>`firewall`
 
 Data type: `Boolean`
 
 Indicate that you want to load the native SIMP firewall management subsystem
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="haveged"></a>`haveged`
+##### <a name="-simp_options--haveged"></a>`haveged`
 
 Data type: `Boolean`
 
@@ -101,52 +102,61 @@ generation
 
 @see http://simp.readthedocs.io/en/stable/getting_started_guide/Installation_Options/ISO/ISO_Build/Environment_Preparation.html?highlight=haveged SIMP - Getting Started Environment Preparation
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="ipsec"></a>`ipsec`
+##### <a name="-simp_options--ipsec"></a>`ipsec`
 
 Data type: `Boolean`
 
 Include SIMP's ``ipsec`` class, ``libreswan``, and add rules pertinent to
 each application
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="kerberos"></a>`kerberos`
+##### <a name="-simp_options--kerberos"></a>`kerberos`
 
 Data type: `Boolean`
 
 Include the SIMP's Kerberos class, ``krb5``, and to use ``Kerberos`` in
 applicable modules
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="ldap"></a>`ldap`
+##### <a name="-simp_options--ldap"></a>`ldap`
 
 Data type: `Boolean`
 
 Encourage modules to use ``LDAP`` support where possible
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="logrotate"></a>`logrotate`
+##### <a name="-simp_options--logrotate"></a>`logrotate`
 
 Data type: `Boolean`
 
 Include SIMP's ``logrotate`` class and add rules pertinent to each
 application
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="pam"></a>`pam`
+##### <a name="-simp_options--pam"></a>`pam`
 
 Data type: `Boolean`
 
 Include SIMP's ``pam`` class SIMP to manage ``PAM``
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="pki"></a>`pki`
+##### <a name="-simp_options--authselect"></a>`authselect`
+
+Data type: `Boolean`
+
+The dconf, pam, and nsswitch modules will be configured to work with
+a system leveraging authselect
+
+Default value: `false`
+
+##### <a name="-simp_options--pki"></a>`pki`
 
 Data type: `Variant[Boolean,Enum['simp']]`
 
@@ -158,34 +168,34 @@ certificates to the correct locations
 * If ``true``,  don't include SIMP's ``pki`` class, but do use ``pki::copy``
 * If ``simp``, include SIMP's ``pki`` class, and use ``pki::copy``
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="sssd"></a>`sssd`
+##### <a name="-simp_options--sssd"></a>`sssd`
 
 Data type: `Boolean`
 
 Enable ``SSSD`` support where possible
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="stunnel"></a>`stunnel`
+##### <a name="-simp_options--stunnel"></a>`stunnel`
 
 Data type: `Boolean`
 
 Include SIMP's ``stunnel`` class and use it to secure server-to-server
 communications in applicable modules
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="syslog"></a>`syslog`
+##### <a name="-simp_options--syslog"></a>`syslog`
 
 Data type: `Boolean`
 
 Include SIMP's ``rsyslog`` class and configure RSyslog application hooks
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="tcpwrappers"></a>`tcpwrappers`
+##### <a name="-simp_options--tcpwrappers"></a>`tcpwrappers`
 
 Data type: `Boolean`
 
@@ -193,9 +203,9 @@ Whether to include SIMP's ``tcpwrappers`` class and use
 ``tcpwrappers::allow`` to permit the application to the subnets in
 ``$simp_options::trusted_nets``
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="trusted_nets"></a>`trusted_nets`
+##### <a name="-simp_options--trusted_nets"></a>`trusted_nets`
 
 Data type: `Simplib::Netlist`
 
@@ -206,7 +216,7 @@ Subnets to permit, in ``CIDR`` notation
 
 Default value: `['127.0.0.1', '::1']`
 
-##### <a name="package_ensure"></a>`package_ensure`
+##### <a name="-simp_options--package_ensure"></a>`package_ensure`
 
 Data type: `String`
 
@@ -216,15 +226,15 @@ The default ensure parameter for packages
 
 Default value: `'latest'`
 
-##### <a name="libkv"></a>`libkv`
+##### <a name="-simp_options--libkv"></a>`libkv`
 
 Data type: `Boolean`
 
 Enable the libkv backend for some functions
 
-Default value: ``false``
+Default value: `false`
 
-### <a name="simp_optionsdns"></a>`simp_options::dns`
+### <a name="simp_options--dns"></a>`simp_options::dns`
 
 Sets up DNS configuration variables
 
@@ -232,10 +242,10 @@ Sets up DNS configuration variables
 
 The following parameters are available in the `simp_options::dns` class:
 
-* [`search`](#search)
-* [`servers`](#servers)
+* [`search`](#-simp_options--dns--search)
+* [`servers`](#-simp_options--dns--servers)
 
-##### <a name="search"></a>`search`
+##### <a name="-simp_options--dns--search"></a>`search`
 
 Data type: `Array[String]`
 
@@ -244,7 +254,7 @@ order for your environment.
 
 Default value: `[]`
 
-##### <a name="servers"></a>`servers`
+##### <a name="-simp_options--dns--servers"></a>`servers`
 
 Data type: `Array[Simplib::Host]`
 
@@ -268,7 +278,7 @@ caching DNS server.
 
 Default value: `[]`
 
-### <a name="simp_optionsgid"></a>`simp_options::gid`
+### <a name="simp_options--gid"></a>`simp_options::gid`
 
 Provides system-wide defaults for GID settings
 
@@ -276,10 +286,10 @@ Provides system-wide defaults for GID settings
 
 The following parameters are available in the `simp_options::gid` class:
 
-* [`min`](#min)
-* [`max`](#max)
+* [`min`](#-simp_options--gid--min)
+* [`max`](#-simp_options--gid--max)
 
-##### <a name="min"></a>`min`
+##### <a name="-simp_options--gid--min"></a>`min`
 
 Data type: `Integer[0]`
 
@@ -287,7 +297,7 @@ The lowest allowed regular user GID for the system
 
 Default value: `pick(fact('login_defs.gid_min'), 1000)`
 
-##### <a name="max"></a>`max`
+##### <a name="-simp_options--gid--max"></a>`max`
 
 Data type: `Optional[Integer[1]]`
 
@@ -298,7 +308,7 @@ The highest allowed regular user GID for the system
 
 Default value: `fact('login_defs.gid_max')`
 
-### <a name="simp_optionsldap"></a>`simp_options::ldap`
+### <a name="simp_options--ldap"></a>`simp_options::ldap`
 
 Some parameters have default values in `simp_options/data/ldap.yaml`, all
 others **must** have a value specified via Hiera or your ENC.
@@ -307,18 +317,18 @@ others **must** have a value specified via Hiera or your ENC.
 
 The following parameters are available in the `simp_options::ldap` class:
 
-* [`base_dn`](#base_dn)
-* [`bind_dn`](#bind_dn)
-* [`bind_pw`](#bind_pw)
-* [`bind_hash`](#bind_hash)
-* [`sync_dn`](#sync_dn)
-* [`sync_pw`](#sync_pw)
-* [`sync_hash`](#sync_hash)
-* [`root_dn`](#root_dn)
-* [`master`](#master)
-* [`uri`](#uri)
+* [`base_dn`](#-simp_options--ldap--base_dn)
+* [`bind_dn`](#-simp_options--ldap--bind_dn)
+* [`bind_pw`](#-simp_options--ldap--bind_pw)
+* [`bind_hash`](#-simp_options--ldap--bind_hash)
+* [`sync_dn`](#-simp_options--ldap--sync_dn)
+* [`sync_pw`](#-simp_options--ldap--sync_pw)
+* [`sync_hash`](#-simp_options--ldap--sync_hash)
+* [`root_dn`](#-simp_options--ldap--root_dn)
+* [`master`](#-simp_options--ldap--master)
+* [`uri`](#-simp_options--ldap--uri)
 
-##### <a name="base_dn"></a>`base_dn`
+##### <a name="-simp_options--ldap--base_dn"></a>`base_dn`
 
 Data type: `String`
 
@@ -326,7 +336,7 @@ The Base Distinguished Name of the LDAP server
 
 Default value: `simplib::ldap::domain_to_dn()`
 
-##### <a name="bind_dn"></a>`bind_dn`
+##### <a name="-simp_options--ldap--bind_dn"></a>`bind_dn`
 
 Data type: `String`
 
@@ -334,19 +344,19 @@ The LDAP Bind Distinguished Name
 
 Default value: `"cn=hostAuth,ou=Hosts,${base_dn}"`
 
-##### <a name="bind_pw"></a>`bind_pw`
+##### <a name="-simp_options--ldap--bind_pw"></a>`bind_pw`
 
 Data type: `String`
 
 The LDAP Bind password
 
-##### <a name="bind_hash"></a>`bind_hash`
+##### <a name="-simp_options--ldap--bind_hash"></a>`bind_hash`
 
 Data type: `String`
 
 The salted LDAP Bind password hash
 
-##### <a name="sync_dn"></a>`sync_dn`
+##### <a name="-simp_options--ldap--sync_dn"></a>`sync_dn`
 
 Data type: `String`
 
@@ -354,19 +364,19 @@ The LDAP Sync Distinguished Name
 
 Default value: `"cn=LDAPSync,ou=Hosts,${base_dn}"`
 
-##### <a name="sync_pw"></a>`sync_pw`
+##### <a name="-simp_options--ldap--sync_pw"></a>`sync_pw`
 
 Data type: `String`
 
 The LDAP Sync password
 
-##### <a name="sync_hash"></a>`sync_hash`
+##### <a name="-simp_options--ldap--sync_hash"></a>`sync_hash`
 
 Data type: `String`
 
 The LDAP Sync password hash
 
-##### <a name="root_dn"></a>`root_dn`
+##### <a name="-simp_options--ldap--root_dn"></a>`root_dn`
 
 Data type: `String`
 
@@ -374,23 +384,23 @@ The LDAP Root Distinguished Name
 
 Default value: `"cn=LDAPAdmin,ou=People,${base_dn}"`
 
-##### <a name="master"></a>`master`
+##### <a name="-simp_options--ldap--master"></a>`master`
 
 Data type: `Simplib::URI`
 
 The LDAP master in URI form (ldap://server)
 
-Default value: `$simp_options::puppet::server`
+Default value: `$simp_options::puppet::server ? { undef => undef, default => "ldap://${simp_options::puppet::server}"`
 
-##### <a name="uri"></a>`uri`
+##### <a name="-simp_options--ldap--uri"></a>`uri`
 
 Data type: `Array[Simplib::URI]`
 
 The list of OpenLDAP servers in URI form (ldap://server)
 
-Default value: `$master`
+Default value: `$master ? { undef => undef, default => [$master]`
 
-### <a name="simp_optionsntp"></a>`simp_options::ntp`
+### <a name="simp_options--ntp"></a>`simp_options::ntp`
 
 @example A hash of servers
   {
@@ -420,9 +430,9 @@ Default value: `$master`
 
 The following parameters are available in the `simp_options::ntp` class:
 
-* [`servers`](#servers)
+* [`servers`](#-simp_options--ntp--servers)
 
-##### <a name="servers"></a>`servers`
+##### <a name="-simp_options--ntp--servers"></a>`servers`
 
 Data type: `Variant[Hash[Simplib::Host, Array[String[1]]], Array[Simplib::Host]]`
 
@@ -434,7 +444,7 @@ run multiple production systems using individual hardware clocks!
 
 Default value: `[]`
 
-### <a name="simp_optionsntpd"></a>`simp_options::ntpd`
+### <a name="simp_options--ntpd"></a>`simp_options::ntpd`
 
 Sets up NTP configuration variables
 
@@ -442,9 +452,9 @@ Sets up NTP configuration variables
 
 The following parameters are available in the `simp_options::ntpd` class:
 
-* [`servers`](#servers)
+* [`servers`](#-simp_options--ntpd--servers)
 
-##### <a name="servers"></a>`servers`
+##### <a name="-simp_options--ntpd--servers"></a>`servers`
 
 Data type: `Array[Simplib::Host]`
 
@@ -455,7 +465,7 @@ run multiple production systems using individual hardware clocks!
 
 Default value: `[]`
 
-### <a name="simp_optionsopenssl"></a>`simp_options::openssl`
+### <a name="simp_options--openssl"></a>`simp_options::openssl`
 
 Sets up OpenSSL configuration variables
 
@@ -467,9 +477,9 @@ Sets up OpenSSL configuration variables
 
 The following parameters are available in the `simp_options::openssl` class:
 
-* [`cipher_suite`](#cipher_suite)
+* [`cipher_suite`](#-simp_options--openssl--cipher_suite)
 
-##### <a name="cipher_suite"></a>`cipher_suite`
+##### <a name="-simp_options--openssl--cipher_suite"></a>`cipher_suite`
 
 Data type: `Array[String]`
 
@@ -477,11 +487,11 @@ The default ciphers to use in openssl.
 
 Default value: `$::simp_options::openssl::params::cipher_suite`
 
-### <a name="simp_optionsopensslparams"></a>`simp_options::openssl::params`
+### <a name="simp_options--openssl--params"></a>`simp_options::openssl::params`
 
 desired or the system is already in FIPS mode.
 
-### <a name="simp_optionspki"></a>`simp_options::pki`
+### <a name="simp_options--pki"></a>`simp_options::pki`
 
 Sets up global PKI configuration variables
 
@@ -489,9 +499,9 @@ Sets up global PKI configuration variables
 
 The following parameters are available in the `simp_options::pki` class:
 
-* [`source`](#source)
+* [`source`](#-simp_options--pki--source)
 
-##### <a name="source"></a>`source`
+##### <a name="-simp_options--pki--source"></a>`source`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -500,7 +510,7 @@ directory for pki::copy.
 
 Default value: `'/etc/pki/simp/x509'`
 
-### <a name="simp_optionspuppet"></a>`simp_options::puppet`
+### <a name="simp_options--puppet"></a>`simp_options::puppet`
 
 Sets up Puppet configuration variables
 
@@ -508,44 +518,44 @@ Sets up Puppet configuration variables
 
 The following parameters are available in the `simp_options::puppet` class:
 
-* [`server`](#server)
-* [`ca`](#ca)
-* [`ca_port`](#ca_port)
-* [`server_distribution`](#server_distribution)
+* [`server`](#-simp_options--puppet--server)
+* [`ca`](#-simp_options--puppet--ca)
+* [`ca_port`](#-simp_options--puppet--ca_port)
+* [`server_distribution`](#-simp_options--puppet--server_distribution)
 
-##### <a name="server"></a>`server`
+##### <a name="-simp_options--puppet--server"></a>`server`
 
 Data type: `Optional[Simplib::Host]`
 
 The ``Hostname`` or ``FQDN`` of the Puppet server
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="ca"></a>`ca`
+##### <a name="-simp_options--puppet--ca"></a>`ca`
 
 Data type: `Optional[Simplib::Host]`
 
 The Puppet Certificate Authority
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="ca_port"></a>`ca_port`
+##### <a name="-simp_options--puppet--ca_port"></a>`ca_port`
 
 Data type: `Simplib::Port`
 
 The port on which the Puppet Certificate Authority will listen
 
-Default value: `$server_distribution`
+Default value: `$server_distribution ? { 'PE' => $facts['puppet_settings']['agent']['ca_port'], default => 8141`
 
-##### <a name="server_distribution"></a>`server_distribution`
+##### <a name="-simp_options--puppet--server_distribution"></a>`server_distribution`
 
 Data type: `Simplib::Serverdistribution`
 
 The server distribution being used, PC1 or PE.
 
-Default value: `(`
+Default value: `(('pe_build' in  $facts) or $facts['is_pe']) ? { true => 'PE', default => 'PC1'`
 
-### <a name="simp_optionsrsync"></a>`simp_options::rsync`
+### <a name="simp_options--rsync"></a>`simp_options::rsync`
 
 Sets up ``rsync`` configuration variables
 
@@ -553,10 +563,10 @@ Sets up ``rsync`` configuration variables
 
 The following parameters are available in the `simp_options::rsync` class:
 
-* [`server`](#server)
-* [`timeout`](#timeout)
+* [`server`](#-simp_options--rsync--server)
+* [`timeout`](#-simp_options--rsync--timeout)
 
-##### <a name="server"></a>`server`
+##### <a name="-simp_options--rsync--server"></a>`server`
 
 Data type: `Simplib::Host`
 
@@ -569,7 +579,7 @@ The **default value** of ``127.0.0.1`` is appropriate for rsync over stunnel.
 
 Default value: `'127.0.0.1'`
 
-##### <a name="timeout"></a>`timeout`
+##### <a name="-simp_options--rsync--timeout"></a>`timeout`
 
 Data type: `Integer`
 
@@ -577,7 +587,7 @@ rsync connection timeout in **seconds**
 
 Default value: `1`
 
-### <a name="simp_optionssyslog"></a>`simp_options::syslog`
+### <a name="simp_options--syslog"></a>`simp_options::syslog`
 
 Sets up ``syslog`` configuration variables
 
@@ -585,10 +595,10 @@ Sets up ``syslog`` configuration variables
 
 The following parameters are available in the `simp_options::syslog` class:
 
-* [`log_servers`](#log_servers)
-* [`failover_log_servers`](#failover_log_servers)
+* [`log_servers`](#-simp_options--syslog--log_servers)
+* [`failover_log_servers`](#-simp_options--syslog--failover_log_servers)
 
-##### <a name="log_servers"></a>`log_servers`
+##### <a name="-simp_options--syslog--log_servers"></a>`log_servers`
 
 Data type: `Array[Simplib::Host]`
 
@@ -596,7 +606,7 @@ The log servers to receive forwarded logs
 
 Default value: `[]`
 
-##### <a name="failover_log_servers"></a>`failover_log_servers`
+##### <a name="-simp_options--syslog--failover_log_servers"></a>`failover_log_servers`
 
 Data type: `Array[Simplib::Host]`
 
@@ -604,7 +614,7 @@ Failover log servers in case your log servers fail
 
 Default value: `[]`
 
-### <a name="simp_optionsuid"></a>`simp_options::uid`
+### <a name="simp_options--uid"></a>`simp_options::uid`
 
 Provides system-wide defaults for UID settings
 
@@ -612,10 +622,10 @@ Provides system-wide defaults for UID settings
 
 The following parameters are available in the `simp_options::uid` class:
 
-* [`min`](#min)
-* [`max`](#max)
+* [`min`](#-simp_options--uid--min)
+* [`max`](#-simp_options--uid--max)
 
-##### <a name="min"></a>`min`
+##### <a name="-simp_options--uid--min"></a>`min`
 
 Data type: `Integer[0]`
 
@@ -623,7 +633,7 @@ The lowest allowed regular user UID for the system
 
 Default value: `pick(fact('login_defs.uid_min'), 1000)`
 
-##### <a name="max"></a>`max`
+##### <a name="-simp_options--uid--max"></a>`max`
 
 Data type: `Optional[Integer[1]]`
 
