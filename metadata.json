@@ -1,6 +1,6 @@
 {
   "name": "simp-simp_options",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "author": "SIMP Team",
   "summary": "Variables enabling SIMP core capabilities",
   "license": "Apache-2.0",
@@ -25,33 +25,38 @@
       "operatingsystem": "CentOS",
       "operatingsystemrelease": [
         "8",
-        "7"
+        "7",
+        "9"
       ]
     },
     {
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
         "8",
-        "7"
+        "7",
+        "9"
       ]
     },
     {
       "operatingsystem": "OracleLinux",
       "operatingsystemrelease": [
         "8",
-        "7"
+        "7",
+        "9"
       ]
     },
     {
       "operatingsystem": "Rocky",
       "operatingsystemrelease": [
-        "8"
+        "8",
+        "9"
       ]
     },
     {
       "operatingsystem": "AlmaLinux",
       "operatingsystemrelease": [
-        "8"
+        "8",
+        "9"
       ]
     }
   ],
