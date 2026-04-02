@@ -329,27 +329,6 @@ checks:
         - CCI-001744
         - CCI-000366
         - SRG-OS-000363-GPOS-00150
-  oval:com.puppet.forge.simp.simp_options.tcpwrappers:
-    settings:
-      parameter: simp_options::tcpwrappers
-      value: true
-    type: puppet-class-parameter
-    controls:
-      nist_800_53:rev4: true
-      nist_800_53:rev4:AC-4: true
-      disa_stig: true
-      AC-4: true
-      RHEL-07-040810: true
-      SRG-OS-000480-GPOS-00227: true
-      cci:CCI-000366: true
-    identifiers:
-      nist_800_53:rev4:
-        - AC-4
-      disa_stig:
-        - AC-4
-        - RHEL-07-040810
-        - SRG-OS-000480-GPOS-00227
-        - CCI-000366
   oval:com.puppet.forge.simp.simp_options.uid.max:
     settings:
       parameter: simp_options::uid::max
