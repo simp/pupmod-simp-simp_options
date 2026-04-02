@@ -70,11 +70,6 @@
 # @param syslog
 #   Include SIMP's ``rsyslog`` class and configure RSyslog application hooks
 #
-# @param tcpwrappers
-#   Whether to include SIMP's ``tcpwrappers`` class and use
-#   ``tcpwrappers::allow`` to permit the application to the subnets in
-#   ``$simp_options::trusted_nets``
-#
 # @param trusted_nets
 #   Subnets to permit, in ``CIDR`` notation
 #
@@ -107,7 +102,6 @@ class simp_options (
   Boolean                       $sssd           = false,
   Boolean                       $stunnel        = false,
   Boolean                       $syslog         = false,
-  Boolean                       $tcpwrappers    = false,
   Simplib::Netlist              $trusted_nets   = ['127.0.0.1', '::1'],
   String                        $package_ensure = 'latest',
   Boolean                       $libkv          = false
