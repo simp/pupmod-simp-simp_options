@@ -1,5 +1,11 @@
-* Mon May 11 2026 Steven Pritchard <steve@sicura.us> - 2.0.0
+* Fri May 22 2026 Steven Pritchard <steve@sicura.us> - 2.0.0
 - Remove unmaintained Compliance Engine data
+- Drop support for Puppet 7 (Puppet 8 is now the minimum)
+- Switch supported runtime from `puppet` to `openvox` in metadata.json
+- Drop support for EL7 (CentOS, RHEL, OracleLinux) and CentOS 8
+- Add support for EL10 (CentOS, RHEL, OracleLinux, Rocky, AlmaLinux)
+- Update `issues_url` to the GitHub issues page
+- Allow `simp/simplib` 5.x
 
 * Mon Oct 23 2023 Steven Pritchard <steve@sicura.us> - 1.10.0
 - [puppetsync] Add EL9 support
