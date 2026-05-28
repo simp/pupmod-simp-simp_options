@@ -45,7 +45,6 @@ The following parameters are available in the `simp_options` class:
 * [`sssd`](#-simp_options--sssd)
 * [`stunnel`](#-simp_options--stunnel)
 * [`syslog`](#-simp_options--syslog)
-* [`tcpwrappers`](#-simp_options--tcpwrappers)
 * [`trusted_nets`](#-simp_options--trusted_nets)
 * [`package_ensure`](#-simp_options--package_ensure)
 * [`libkv`](#-simp_options--libkv)
@@ -192,16 +191,6 @@ Default value: `false`
 Data type: `Boolean`
 
 Include SIMP's ``rsyslog`` class and configure RSyslog application hooks
-
-Default value: `false`
-
-##### <a name="-simp_options--tcpwrappers"></a>`tcpwrappers`
-
-Data type: `Boolean`
-
-Whether to include SIMP's ``tcpwrappers`` class and use
-``tcpwrappers::allow`` to permit the application to the subnets in
-``$simp_options::trusted_nets``
 
 Default value: `false`
 
