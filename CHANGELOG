@@ -1,3 +1,8 @@
+* Thu Jul 16 2026 Nicholas Markowski <nicholas.markowski@onyxpoint.com> - 2.0.2
+- Fix `simp_options::openssl::params` catalog compilation failure on
+  non-Linux nodes when FIPS is enabled (the `fips_ciphers` fact is only
+  provided on Linux)
+
 * Thu Jul 09 2026 Steven Pritchard <steve@sicura.us> - 2.0.1
 - Resolved puppet-lint manifest whitespace offenses
 
