@@ -15,7 +15,7 @@ give the SIMP module ecosystem a single, typed, validated place to set these
 shared toggles and values.
 
 The top-level `simp_options` class is the canonical declaration of the
-feature-toggle parameters (`manifests/init.pp:94-114`). Its sub-classes
+feature-toggle parameters (`manifests/init.pp`). Its sub-classes
 (`simp_options::dns`, `::ntp`, `::pki`, `::ldap`, `::puppet`, …) declare the
 namespaced *configuration values* other modules consume. Because
 `simp_options`'s parameters are typed with `data_type` classes from `simp/simplib`
@@ -29,80 +29,80 @@ The public entry point is the `simp_options` class; all thirteen other classes
 are private (`assert_private()`) and are option *namespaces*, not consumer-facing
 classes.
 
-- **`simp_options` (`manifests/init.pp:94-137`)** — the public class. Its
-  parameters (`init.pp:94-114`) are the canonical `simp_options::*` feature
+- **`simp_options` (`manifests/init.pp`)** — the public class. Its
+  parameters (`init.pp`) are the canonical `simp_options::*` feature
   toggles. All are `Boolean` and default `false` **except**:
   - `$pki` — `Variant[Boolean,Enum['simp']]`, default `false`
-    (`init.pp:106`); `false` = don't include SIMP's `pki` class and don't use
+    (`init.pp`); `false` = don't include SIMP's `pki` class and don't use
     `pki::copy`; `true` = don't include the class but do use `pki::copy`;
-    `'simp'` = include the class and use `pki::copy` (`init.pp:54-61`).
+    `'simp'` = include the class and use `pki::copy` (`init.pp`).
   - `$trusted_nets` — `Simplib::Netlist`, default `['127.0.0.1', '::1']`
-    (`init.pp:111`).
-  - `$package_ensure` — `String`, default `'latest'` (`init.pp:112`).
+    (`init.pp`).
+  - `$package_ensure` — `String`, default `'latest'` (`init.pp`).
 
-  The full toggle set (`init.pp:95-113`): `auditd`, `authselect`, `clamav`
-  (**deprecated — do not use**, `init.pp:7-8`), `fips`, `firewall`, `haveged`,
+  The full toggle set (`init.pp`): `auditd`, `authselect`, `clamav`
+  (**deprecated — do not use**, `init.pp`), `fips`, `firewall`, `haveged`,
   `ipsec`, `kerberos`, `ldap`, `logrotate`, `pam`, `pki`, `sssd`, `stunnel`,
   `syslog`, `tcpwrappers`, `trusted_nets`, `package_ensure`, `libkv`.
 
-  Body (`init.pp:115-136`):
-  - `simplib::validate_net_list($trusted_nets)` (`init.pp:115`).
+  Body (`init.pp`):
+  - `simplib::validate_net_list($trusted_nets)` (`init.pp`).
   - **Unconditionally** `include`s eight namespace sub-classes:
     `simp_options::puppet`, `::dns`, `::ntp`, `::ntpd`, `::openssl`, `::rsync`,
-    `::uid`, `::gid` (`init.pp:117-124`).
+    `::uid`, `::gid` (`init.pp`).
   - **Conditionally** includes three more, gated on the matching toggle:
     `simp_options::ldap` if `$ldap`, `simp_options::pki` if `$pki`,
-    `simp_options::syslog` if `$syslog` (`init.pp:126-136`).
+    `simp_options::syslog` if `$syslog` (`init.pp`).
 
 - **Namespace sub-classes** — each is `assert_private()` and simply declares
   typed, Hiera-overridable parameters (plus, in some, a `simplib::validate_*`
   call). Non-obvious defaults:
   - **`simp_options::openssl` / `::openssl::params`** — `$cipher_suite`
-    defaults from `simp_options::openssl::params` (`openssl.pp:10`), which
+    defaults from `simp_options::openssl::params` (`openssl.pp`), which
     `inherits` `params`. `params` is the only sub-class that is
     FIPS-aware: it `include`s `simp_options` and, if `$simp_options::fips` **or**
     the `fips_enabled` fact is set, uses `$facts['fips_ciphers']` (failing hard
     if that fact is absent), otherwise `['DEFAULT', '!MEDIUM']`
-    (`openssl/params.pp:8-20`).
+    (`openssl/params.pp`).
   - **`simp_options::puppet`** — `$server_distribution` auto-detects PE vs PC1
     from the `pe_build`/`is_pe` facts; `$ca_port` defaults to the PE agent's
-    `ca_port` on PE, else `8141` (`puppet.pp:16-17`).
+    `ca_port` on PE, else `8141` (`puppet.pp`).
   - **`simp_options::ldap`** — `$bind_pw`, `$bind_hash`, `$sync_pw`,
-    `$sync_hash` are **required** (no default, `ldap.pp:29-32`); `$master`
+    `$sync_hash` are **required** (no default, `ldap.pp`); `$master`
     derives from `simp_options::puppet::server` and the DN defaults derive from
-    `simplib::ldap::domain_to_dn()` (`ldap.pp:33-38`).
+    `simplib::ldap::domain_to_dn()` (`ldap.pp`).
   - **`simp_options::ntpd`** — `$servers` is **deprecated**; use
-    `simp_options::ntp` instead (`ntpd.pp:4`).
+    `simp_options::ntp` instead (`ntpd.pp`).
   - **`simp_options::uid` / `::gid`** — `$min`/`$max` default from the
-    `login_defs` fact (`uid.pp:15-16`, `gid.pp:15-16`).
+    `login_defs` fact (`uid.pp`, `gid.pp`).
   - **`simp_options::pki`** — `$source` defaults to `/etc/pki/simp/x509`
-    (`pki.pp:9`).
+    (`pki.pp`).
   - **`simp_options::rsync`** — `$server` defaults to `127.0.0.1` (rsync over
-    stunnel), `$timeout` to `1` second (`rsync.pp:15-16`).
+    stunnel), `$timeout` to `1` second (`rsync.pp`).
   - **`simp_options::dns`**, **`::syslog`** — empty-array list defaults, each
-    validated with `simplib::validate_net_list` (`dns.pp:27-31`,
-    `syslog.pp:10-15`).
+    validated with `simplib::validate_net_list` (`dns.pp`,
+    `syslog.pp`).
 
 ### Gotchas / non-obvious details
 
 - **This module manages no system state.** No packages, services, files, or
   execs — it only declares typed parameters and validates them. Do not add
   state-managing resources here; that belongs in the consuming modules.
-- **`clamav` and `ntpd::servers` are deprecated** (`init.pp:7-8`,
-  `ntpd.pp:4`). Leave them in place for backward compatibility but do not build
+- **`clamav` and `ntpd::servers` are deprecated** (`init.pp`,
+  `ntpd.pp`). Leave them in place for backward compatibility but do not build
   new behavior on them; `simp_options::ntp` supersedes `ntpd`.
 - **`simp_options::openssl::params` fails compilation** on a FIPS host if the
-  `fips_ciphers` fact is missing (`openssl/params.pp:15`) — it has no fallback
+  `fips_ciphers` fact is missing (`openssl/params.pp`) — it has no fallback
   in that branch.
 - **`simp_options::ldap` has four required parameters** with no defaults
-  (`ldap.pp:29-32`); merely toggling `simp_options::ldap: true` without
+  (`ldap.pp`); merely toggling `simp_options::ldap: true` without
   supplying `bind_pw`/`bind_hash`/`sync_pw`/`sync_hash` in Hiera will fail
   compilation.
-- **Toggling `$pki` is tri-state**, not boolean (`init.pp:54-61,106`) — the
+- **Toggling `$pki` is tri-state**, not boolean (`init.pp`) — the
   `'simp'` value has distinct semantics from `true`.
 - **The eight always-included sub-classes always compile**, even when their
   feature is off — they publish default values that downstream modules read
-  regardless. Only `ldap`, `pki`, and `syslog` are gated (`init.pp:126-136`).
+  regardless. Only `ldap`, `pki`, and `syslog` are gated (`init.pp`).
 
 ## This module publishes the `simp_options::*` seam (it does not consume it)
 
@@ -114,7 +114,7 @@ of those keys, not a consumer of them. It contains no
 `simplib::lookup('simp_options::*', …)` calls; it *declares* the parameters that
 those lookups resolve against.
 
-The canonical top-level keys it publishes (`manifests/init.pp:94-114`) are:
+The canonical top-level keys it publishes (`manifests/init.pp`) are:
 
 `simp_options::auditd`, `simp_options::authselect`, `simp_options::clamav`
 (deprecated), `simp_options::fips`, `simp_options::firewall`,
@@ -216,7 +216,7 @@ Relevant gem pins (from `Gemfile`): `puppetlabs_spec_helper ~> 8.0.0`
 Puppet range defaults to `['>= 8', '< 9']` (line 23), and the Gemfile installs
 **both** the `openvox` and `puppet` gems at that version via
 `['openvox', 'puppet'].each do |gem_name|` (line 30) until the `puppet`
-dependency is dropped from other gems. `spec/spec_helper.rb:11` requires
+dependency is dropped from other gems. `spec/spec_helper.rb` requires
 `puppetlabs_spec_helper/module_spec_helper`.
 
 ## Conventions
