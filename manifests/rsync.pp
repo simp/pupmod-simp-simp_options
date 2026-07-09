@@ -14,7 +14,7 @@
 class simp_options::rsync (
   Simplib::Host $server  = '127.0.0.1',
   Integer       $timeout = 1
-){
+) {
   assert_private()
   simplib::validate_net_list($server)
 }

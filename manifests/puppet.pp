@@ -15,7 +15,7 @@ class simp_options::puppet (
   Optional[Simplib::Host]     $ca                  = undef,
   Simplib::Serverdistribution $server_distribution = (('pe_build' in  $facts) or $facts['is_pe']) ? { true => 'PE', default => 'PC1' },
   Simplib::Port               $ca_port             = $server_distribution ? { 'PE' => $facts['puppet_settings']['agent']['ca_port'], default => 8141 }
-){
+) {
   assert_private()
 
   if $server { simplib::validate_net_list($server) }

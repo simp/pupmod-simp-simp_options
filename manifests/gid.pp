@@ -14,6 +14,6 @@
 class simp_options::gid (
   Integer[0]           $min = pick(fact('login_defs.gid_min'), 1000),
   Optional[Integer[1]] $max = fact('login_defs.gid_max')
-){
+) {
   assert_private()
 }

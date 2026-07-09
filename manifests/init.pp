@@ -111,7 +111,7 @@ class simp_options (
   Simplib::Netlist              $trusted_nets   = ['127.0.0.1', '::1'],
   String                        $package_ensure = 'latest',
   Boolean                       $libkv          = false
-){
+) {
   simplib::validate_net_list($trusted_nets)
 
   include 'simp_options::puppet'

@@ -10,7 +10,7 @@
 #
 class simp_options::ntpd (
   Array[Simplib::Host] $servers = []
-){
+) {
   assert_private()
   simplib::validate_net_list($servers)
 }
