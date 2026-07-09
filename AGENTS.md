@@ -210,12 +210,11 @@ bundle exec rake rubocop
 puppet strings generate --format markdown --out REFERENCE.md
 ```
 
-Relevant gem pins (from `Gemfile`): `puppetlabs_spec_helper ~> 8.0.0`
-(line 33), `simp-rake-helpers ~> 5.24.0` (line 39), `simp-beaker-helpers
-~> 2.0.0` (line 55). Rubocop is pinned to `~> 1.88.0` (line 16). The tested
-Puppet range defaults to `['>= 8', '< 9']` (line 23), and the Gemfile installs
+Relevant gem pins (from `Gemfile`): `puppetlabs_spec_helper ~> 8.0.0`, `simp-rake-helpers ~> 5.24.0`, `simp-beaker-helpers
+~> 2.0.0`. Rubocop is pinned to `~> 1.88.0`. The tested
+Puppet range defaults to `['>= 8', '< 9']`, and the Gemfile installs
 **both** the `openvox` and `puppet` gems at that version via
-`['openvox', 'puppet'].each do |gem_name|` (line 30) until the `puppet`
+`['openvox', 'puppet'].each do |gem_name|` until the `puppet`
 dependency is dropped from other gems. `spec/spec_helper.rb` requires
 `puppetlabs_spec_helper/module_spec_helper`.
 
