@@ -7,7 +7,7 @@
 # @author https://github.com/simp/pupmod-simp-simp_options/graphs/contributors
 #
 class simp_options::openssl (
-  Array[String] $cipher_suite = $::simp_options::openssl::params::cipher_suite
+  Array[String] $cipher_suite = $simp_options::openssl::params::cipher_suite
 ) inherits simp_options::openssl::params {
   assert_private()
 }

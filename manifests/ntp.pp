@@ -29,6 +29,6 @@
 #
 class simp_options::ntp (
   Variant[Hash[Simplib::Host, Array[String[1]]], Array[Simplib::Host]] $servers = []
-){
+) {
   assert_private()
 }

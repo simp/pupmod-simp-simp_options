@@ -30,13 +30,13 @@ class simp_options::ldap (
   String              $bind_hash,
   String              $sync_pw,
   String              $sync_hash,
-  Simplib::URI        $master     = $simp_options::puppet::server ? { undef => undef, default => "ldap://${simp_options::puppet::server}"},
-  Array[Simplib::URI] $uri        = $master ? { undef => undef, default => [$master]},
+  Simplib::URI        $master     = $simp_options::puppet::server ? { undef => undef, default => "ldap://${simp_options::puppet::server}" },
+  Array[Simplib::URI] $uri        = $master ? { undef => undef, default => [$master] },
   String              $base_dn    = simplib::ldap::domain_to_dn(),
   String              $bind_dn    = "cn=hostAuth,ou=Hosts,${base_dn}",
   String              $sync_dn    = "cn=LDAPSync,ou=Hosts,${base_dn}",
   String              $root_dn    = "cn=LDAPAdmin,ou=People,${base_dn}",
-){
+) {
   assert_private()
 
   simplib::validate_uri_list($master, ['ldap','ldaps'])

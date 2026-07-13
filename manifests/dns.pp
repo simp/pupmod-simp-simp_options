@@ -26,7 +26,7 @@
 class simp_options::dns (
   Array[String]        $search  = [],
   Array[Simplib::Host] $servers = []
-){
+) {
   assert_private()
   simplib::validate_net_list($servers)
 }

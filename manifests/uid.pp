@@ -14,6 +14,6 @@
 class simp_options::uid (
   Integer[0]           $min = pick(fact('login_defs.uid_min'), 1000),
   Optional[Integer[1]] $max = fact('login_defs.uid_max')
-){
+) {
   assert_private()
 }
