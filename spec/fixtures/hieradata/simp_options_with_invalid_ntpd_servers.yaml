@@ -1,3 +1,0 @@
----
-simp_options::ntpd::servers :
- - '1.2.3.400'
