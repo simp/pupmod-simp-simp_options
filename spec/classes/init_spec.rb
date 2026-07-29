@@ -3,7 +3,7 @@ require 'spec_helper'
 shared_examples_for 'a simp_options class' do
   it { is_expected.to compile.with_all_deps }
   it { is_expected.to contain_class('simp_options::dns') }
-  it { is_expected.to contain_class('simp_options::ntpd') }
+  it { is_expected.to contain_class('simp_options::ntp') }
   it { is_expected.to contain_class('simp_options::openssl') }
   it { is_expected.to contain_class('simp_options::puppet') }
   it { is_expected.to contain_class('simp_options::rsync') }

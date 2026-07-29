@@ -1,3 +1,10 @@
+* Wed Jul 29 2026 Hazel Caballero <hazel@sicura.us> - 3.0.0
+- BREAKING CHANGE: (#126) Remove the deprecated `simp_options::ntpd` class
+  (the `pupmod-simp-ntpd` module it supported has been archived). Sites that
+  set `simp_options::ntpd::servers` in hieradata MUST rename the key to
+  `simp_options::ntp::servers`, which is consumed by the chrony replacement
+  and by the SIMP client kickstart
+
 * Thu Jul 16 2026 Nicholas Markowski <nicholas.markowski@onyxpoint.com> - 2.0.2
 - Fix `simp_options::openssl::params` catalog compilation failure on
   non-Linux nodes when FIPS is enabled (the `fips_ciphers` fact is only

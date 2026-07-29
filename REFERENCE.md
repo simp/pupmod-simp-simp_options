@@ -11,7 +11,6 @@
 * [`simp_options::gid`](#simp_options--gid): Provides system-wide defaults for GID settings
 * [`simp_options::ldap`](#simp_options--ldap): Sets up LDAP configuration variables
 * [`simp_options::ntp`](#simp_options--ntp): Sets up NTP configuration variables
-* [`simp_options::ntpd`](#simp_options--ntpd): Sets up NTP configuration variables
 * [`simp_options::openssl`](#simp_options--openssl): Sets up OpenSSL configuration variables
 * [`simp_options::openssl::params`](#simp_options--openssl--params): Sets appropriate openssl cipher suite based on whether FIPS-mode is
 * [`simp_options::pki`](#simp_options--pki): Sets up global PKI configuration variables
@@ -439,27 +438,6 @@ Data type: `Variant[Hash[Simplib::Host, Array[String[1]]], Array[Simplib::Host]]
 The NTP time servers for the network and, optionally,
 configuration for the daemons that communicate with them.
 
-A consistent time source is critical to your systems' security. **DO NOT**
-run multiple production systems using individual hardware clocks!
-
-Default value: `[]`
-
-### <a name="simp_options--ntpd"></a>`simp_options::ntpd`
-
-Sets up NTP configuration variables
-
-#### Parameters
-
-The following parameters are available in the `simp_options::ntpd` class:
-
-* [`servers`](#-simp_options--ntpd--servers)
-
-##### <a name="-simp_options--ntpd--servers"></a>`servers`
-
-Data type: `Array[Simplib::Host]`
-
-**DEPRECATED** Use simp_options::ntp instead.
-The list of NTP time servers for the network.
 A consistent time source is critical to your systems' security. **DO NOT**
 run multiple production systems using individual hardware clocks!
 
