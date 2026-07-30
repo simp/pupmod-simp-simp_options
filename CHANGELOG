@@ -4,6 +4,12 @@
   set `simp_options::ntpd::servers` in hieradata MUST rename the key to
   `simp_options::ntp::servers`, which is consumed by the chrony replacement
   and by the SIMP client kickstart
+- BREAKING CHANGE: Remove the `simp_options::clamav` catalyst parameter,
+  which has been marked "Deprecated - DO NOT USE" (pupmod-simp-simp 9.0.0
+  drops its ClamAV support)
+- BREAKING CHANGE: Remove the `simp_options::tcpwrappers` catalyst parameter
+  (pupmod-simp-tcpwrappers is archived and TCP wrappers does not exist on
+  any supported EL release)
 
 * Thu Jul 16 2026 Nicholas Markowski <nicholas.markowski@onyxpoint.com> - 2.0.2
 - Fix `simp_options::openssl::params` catalog compilation failure on
