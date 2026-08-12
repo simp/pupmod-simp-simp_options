@@ -463,7 +463,7 @@ Data type: `Array[String]`
 
 The default ciphers to use in openssl.
 
-Default value: `$::simp_options::openssl::params::cipher_suite`
+Default value: `$simp_options::openssl::params::cipher_suite`
 
 ### <a name="simp_options--openssl--params"></a>`simp_options::openssl::params`
 
