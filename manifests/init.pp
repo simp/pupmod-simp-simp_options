@@ -4,9 +4,6 @@
 #   Include SIMP's ``auditd`` class and add audit rules pertinent to each
 #   application
 #
-# @param clamav
-#   Deprecated - DO NOT USE
-#
 # @param fips
 #   Enable ``FIPS`` mode for the system
 #
@@ -70,11 +67,6 @@
 # @param syslog
 #   Include SIMP's ``rsyslog`` class and configure RSyslog application hooks
 #
-# @param tcpwrappers
-#   Whether to include SIMP's ``tcpwrappers`` class and use
-#   ``tcpwrappers::allow`` to permit the application to the subnets in
-#   ``$simp_options::trusted_nets``
-#
 # @param trusted_nets
 #   Subnets to permit, in ``CIDR`` notation
 #
@@ -94,7 +86,6 @@
 class simp_options (
   Boolean                       $auditd         = false,
   Boolean                       $authselect     = false,
-  Boolean                       $clamav         = false,
   Boolean                       $fips           = false,
   Boolean                       $firewall       = false,
   Boolean                       $haveged        = false,
@@ -107,7 +98,6 @@ class simp_options (
   Boolean                       $sssd           = false,
   Boolean                       $stunnel        = false,
   Boolean                       $syslog         = false,
-  Boolean                       $tcpwrappers    = false,
   Simplib::Netlist              $trusted_nets   = ['127.0.0.1', '::1'],
   String                        $package_ensure = 'latest',
   Boolean                       $libkv          = false
