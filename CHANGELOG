@@ -1,3 +1,6 @@
+* Mon Aug 24 2026 Steven Pritchard <steve@sicura.us> - 3.0.1
+- [puppetsync] Update metadata.json dependency ranges from the Forge
+
 * Wed Jul 29 2026 Hazel Caballero <hazel@sicura.us> - 3.0.0
 - BREAKING CHANGE: (#126) Remove the deprecated `simp_options::ntpd` class
   (the `pupmod-simp-ntpd` module it supported has been archived). Sites that
