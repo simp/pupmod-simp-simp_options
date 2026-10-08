@@ -601,4 +601,3 @@ The highest allowed regular user UID for the system
   internally
 
 Default value: `fact('login_defs.uid_max')`
-
