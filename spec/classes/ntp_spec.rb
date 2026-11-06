@@ -34,6 +34,22 @@ describe 'simp_options' do
         )
         }
       end
+
+      # The Simplib::Host elements of $servers must reject a dotted-decimal
+      # address with an out-of-range octet. This requires simp/simplib 7.0.0
+      # or later; before that, Simplib::Hostname matched '1.2.3.400' as a
+      # host name. See simp/pupmod-simp-simplib#351.
+      context 'invalid ntp servers' do
+        let(:hieradata) { 'simp_options_with_invalid_ntp_servers' }
+
+        it { is_expected.not_to compile.with_all_deps }
+      end
+
+      context 'invalid ntp servers in a hash' do
+        let(:hieradata) { 'simp_options_with_invalid_ntp_hash' }
+
+        it { is_expected.not_to compile.with_all_deps }
+      end
     end
   end
 end

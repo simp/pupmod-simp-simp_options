@@ -1,0 +1,4 @@
+---
+simp_options::ntp::servers:
+  '1.2.3.400':
+    - 'iburst'
