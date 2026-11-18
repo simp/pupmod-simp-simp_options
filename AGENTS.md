@@ -176,9 +176,10 @@ OracleLinux 8/9/10; Rocky 8/9/10; AlmaLinux 8/9/10.
   several `*_with_invalid_*` files that assert the type/`validate_*` checks
   reject bad input.
 - `REFERENCE.md` — generated Puppet Strings reference.
-- No `data/` or `hiera.yaml` — this module ships **no module-level Hiera data**;
-  all values come from consumers' Hiera or the parameter defaults in the
-  manifests.
+- `hiera.yaml` and `data/common.yaml` — module-level Hiera data holding only
+  `simp_options::firewall: false`, so the key always resolves for other
+  modules' `simp:defaults` profiles. All other values come from consumers'
+  Hiera or the parameter defaults in the manifests.
 - No `lib/`, `types/`, or `templates/` — this module has no custom Ruby
   types/providers/functions/facts, no custom Puppet data types, and no
   templates. Every data type and function it uses comes from `simp/simplib`.

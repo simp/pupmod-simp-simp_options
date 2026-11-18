@@ -1,3 +1,8 @@
+* Wed Nov 18 2026 Steven Pritchard <steve@sicura.us> - 3.2.0
+- Ship module data that sets `simp_options::firewall: false`, so the key
+  resolves in a Hiera lookup even when no site data sets it and the
+  `simp_options` class is not included. Site data still overrides it.
+
 * Thu Oct 08 2026 Steven Pritchard <steve@sicura.us> - 3.1.0
 - Add support for OpenVox 9
 - Update metadata.json dependency ranges from the Forge

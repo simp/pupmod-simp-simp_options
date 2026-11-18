@@ -62,6 +62,17 @@ system.  Otherwise, setup is simple:  include the class as the first class in yo
 
 --------------------
 
+### Module data default for `simp_options::firewall`
+
+The module ships module-level Hiera data (`hiera.yaml` and `data/common.yaml`)
+that sets `simp_options::firewall: false`. This makes a plain Hiera lookup of
+the key resolve to `false` even when no site data sets it and the
+`simp_options` class is not included. The `simp:defaults` compliance profiles
+in other modules alias this key (`%{alias('simp_options::firewall')}`), so it
+must always resolve. Module data is the lowest Hiera layer: any site, host or
+scenario value still wins. No other `simp_options::*` key has a module data
+default.
+
 ## Reference
 
 See [REFERENCE.md](./REFERENCE.md)
